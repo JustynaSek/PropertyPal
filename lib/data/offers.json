@@ -1,0 +1,39 @@
+[
+  {
+    "id": "1",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Mokotow",
+      "neighborhood": "Sadyba"
+    },
+    "price": 1200000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2500,
+    "garden_available": true,
+    "garden_size_sqft": 1500,
+    "description": "Spacious family house in a quiet, green neighborhood with a large garden, perfect for outdoor activities. Features a modern kitchen and ample living space.",
+    "amenities": ["parking", "balcony", "modern kitchen", "fireplace", "large garden"],
+    "image_url": "https://placehold.co/600x400/ADD8E6/000000?text=House+1",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-mokotow-sadyba-ID4k8Z.html"
+  },
+  {
+    "id": "2",
+    "type": "apartment",
+    "location": {
+      "city": "Krakow",
+      "district": "Stare Miasto",
+      "neighborhood": "Kazimierz"
+    },
+    "price": 850000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 1100,
+    "garden_available": false,
+    "description": "Modern apartment in the heart of Krakow, close to restaurants and cultural attractions. Recently renovated, with a spacious living area.",
+    "amenities": ["elevator", "air conditioning", "city view"],
+    "image_url": "https://placehold.co/600x400/90EE90/000000?text=Apartment+2",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-krakow-kazimierz-ID4k9A.html"
+  }
+]
