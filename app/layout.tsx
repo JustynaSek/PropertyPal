@@ -1,4 +1,5 @@
 import './globals.css';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Next.js',
@@ -12,7 +13,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <nav className="w-full bg-white border-b border-gray-200 py-3 px-6 flex gap-6 items-center shadow-sm mb-4">
+          <Link href="/" className="font-bold text-blue-700 hover:underline">Home</Link>
+          <Link href="/offers/add" className="font-semibold text-blue-600 hover:underline">Add Offer</Link>
+          <Link href="/chat" className="font-semibold text-blue-600 hover:underline">Chat</Link>
+        </nav>
+        {children}
+      </body>
     </html>
   )
 }

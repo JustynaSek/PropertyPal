@@ -1,6 +1,7 @@
 [
   {
     "id": "1",
+    "title": "Spacious Family House with Large Garden in Sadyba, Mokotow",
     "type": "house",
     "location": {
       "city": "Warsaw",
@@ -20,6 +21,7 @@
   },
   {
     "id": "2",
+    "title": "Modern Apartment in the Heart of Kazimierz, Krakow",
     "type": "apartment",
     "location": {
       "city": "Krakow",

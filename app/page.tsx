@@ -3,8 +3,6 @@ export const metadata = {
   description: "Your AI-powered real estate assistant. Instantly find, compare, and explore property offers tailored to your needs."
 };
 
-import Chat from "@/components/Chat";
-
 export default function Home() {
   return (
     <div style={{ minHeight: "100vh", background: "#f3f4f6", position: "relative" }}>
@@ -12,7 +10,7 @@ export default function Home() {
       <div style={{ padding: 40, maxWidth: 900, margin: "0 auto" }}>
         <h1 style={{ fontSize: 36, fontWeight: 700, marginBottom: 16 }}>🏡 Real Estate AI Assistant</h1>
         <p style={{ fontSize: 18, color: "#555", marginBottom: 32 }}>
-          Welcome! Use the chat widget in the corner to ask about available properties, get recommendations, or ask for help.
+          Welcome! Use the chat page to ask about available properties, get recommendations, or ask for help.
         </p>
         <a
           href="/offers/add"
@@ -22,22 +20,7 @@ export default function Home() {
         </a>
         {/* ...other app content can go here... */}
       </div>
-      {/* Floating Chat Widget */}
-      <div
-        style={{
-          position: "fixed",
-          bottom: 24,
-          right: 24,
-          zIndex: 1000,
-          maxWidth: 400,
-          width: "90vw",
-          boxShadow: "0 4px 32px #0002",
-          borderRadius: 18,
-          background: "none"
-        }}
-      >
-        <Chat />
-      </div>
+      {/* Chat widget removed. Use the Chat page instead. */}
     </div>
   );
 } 
