@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
     // TEMP: Hardcoded response for testing
     const response = `Here are two property offers I recommend:
 
-House in Zalesie
+Spacious Family House with Large Garden in Sadyba, Mokotow
 Price: 1,200,000 PLN
 Rooms: 6
 Bathrooms: 3
@@ -16,7 +16,7 @@ Garden: Yes (300 sqft)
 Description: Nice house with a chimney.
 Link: [View Offer](https://example.com/offer1)
 
-Apartment in Wilkowyja
+Modern Apartment in the Heart of Kazimierz, Krakow
 Price: 980,000 PLN
 Rooms: 6
 Bathrooms: 2
@@ -27,6 +27,7 @@ Amenities: Garden, Chimney
 Link: [View Offer](https://example.com/offer2)`;
     const offers = [
       {
+        title: "Spacious Family House with Large Garden in Sadyba, Mokotow",
         type: "House",
         location: "Zalesie",
         price: 1200000,
@@ -39,6 +40,7 @@ Link: [View Offer](https://example.com/offer2)`;
         link: "https://example.com/offer1"
       },
       {
+        title: "Modern Apartment in the Heart of Kazimierz, Krakow",
         type: "Apartment",
         location: "Wilkowyja",
         price: 980000,

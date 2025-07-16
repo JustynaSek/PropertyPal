@@ -8,6 +8,7 @@ async function main() {
 
   const docs = (offers as Property[]).map((offer) => {
     const pageContent = `
+      Title: ${offer.title}
       ${offer.type} in ${offer.location.city}, ${offer.location.district}, ${offer.location.neighborhood}.
       Price: ${offer.price}, Rooms: ${offer.number_of_rooms}, Bathrooms: ${offer.number_of_bathrooms}, 
       Square footage: ${offer.square_footage}, Garden: ${offer.garden_available ? "Yes" : "No"}, 

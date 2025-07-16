@@ -5,6 +5,7 @@ import { Document } from "langchain/document";
 
 export type Property = {
   id: string;
+  title: string;
   type: string;
   location: {
     city: string;

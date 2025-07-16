@@ -17,10 +17,10 @@ You are an expert real estate agent. Write a professional, friendly, and persuas
 Format the email in HTML, include:
 - A warm greeting to ${clientName}
 - A persuasive summary/introduction
-- For each offer: a visually clear section with all key details, a compelling explanation of why it’s a great fit, and a link to view the property
+- For each offer: start with the offer's title as a heading, then show all key details, a compelling explanation of why it’s a great fit, and a link to view the property
 - A friendly closing with the agent’s name (${agentName})
 
-Here are the offers (in JSON):
+Here are the offers (in JSON, each with a 'title' field):
 ${JSON.stringify(offers, null, 2)}
 ${agentNote ? `Agent note: ${agentNote}` : ''}
 `;

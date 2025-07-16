@@ -19,7 +19,23 @@ const initialState = {
 };
 
 const AgentOfferForm: React.FC = () => {
-  const [form, setForm] = useState(initialState);
+  const [form, setForm] = useState({
+    title: "",
+    type: "house",
+    city: "",
+    district: "",
+    neighborhood: "",
+    price: "",
+    number_of_rooms: "",
+    number_of_bathrooms: "",
+    square_footage: "",
+    garden_available: false,
+    garden_size_sqft: "",
+    description: "",
+    amenities: "",
+    image_url: "",
+    listing_url: ""
+  });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
@@ -43,6 +59,7 @@ const AgentOfferForm: React.FC = () => {
     setError("");
     try {
       const payload = {
+        title: form.title,
         type: form.type,
         location: {
           city: form.city,
@@ -83,6 +100,9 @@ const AgentOfferForm: React.FC = () => {
       <h2 className="text-2xl font-bold mb-2 text-gray-800">Add New Property Offer</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex flex-col gap-4">
+          <label className="text-gray-700"><span className="font-bold">Title</span>
+            <input name="title" value={form.title} onChange={handleChange} placeholder="Offer Title" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+          </label>
           <label className="text-gray-700"><span className="font-bold">Type</span>
             <select name="type" value={form.type} onChange={handleChange} required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
               <option value="house">House</option>

@@ -14,6 +14,7 @@ export async function POST(req: NextRequest) {
       id: offer.id || generateId(),
     }));
     for (const offer of offersWithId) {
+      if (!offer.title) throw new Error('Offer title is required');
       await addDocumentToVectorStore(offer);
     }
     return new Response(JSON.stringify({ success: true, offers: offersWithId }), { status: 200 });
