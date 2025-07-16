@@ -2,7 +2,6 @@ import React from "react";
 
 interface EmailFormProps {
   email: string;
-  recipientName: string;
   agentName: string;
   clientName: string;
   agentNote: string;
@@ -14,7 +13,6 @@ interface EmailFormProps {
 
 const EmailForm: React.FC<EmailFormProps> = ({
   email,
-  recipientName,
   agentName,
   clientName,
   agentNote,
@@ -54,16 +52,6 @@ const EmailForm: React.FC<EmailFormProps> = ({
         value={agentName}
         onChange={onChange}
         required
-        className="w-full p-2 rounded border border-gray-300"
-      />
-    </div>
-    <div className="mb-2">
-      <label className="block font-bold mb-1">Recipient Name (optional)</label>
-      <input
-        type="text"
-        name="recipientName"
-        value={recipientName}
-        onChange={onChange}
         className="w-full p-2 rounded border border-gray-300"
       />
     </div>

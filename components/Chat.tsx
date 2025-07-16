@@ -17,13 +17,21 @@ const Chat: React.FC = () => {
   const [emailLoading, setEmailLoading] = useState(false); // For email form
   const [error, setError] = useState<string | null>(null);
   const [showEmailForm, setShowEmailForm] = useState(false);
-  const [emailForm, setEmailForm] = useState({ email: "", recipientName: "", agentName: "", clientName: "", agentNote: "" });
+  const [emailForm, setEmailForm] = useState({ email: "", agentName: "", clientName: "", agentNote: "" });
   const [pendingOffers, setPendingOffers] = useState<any[]>([]); // Offers to send by email
   const [emailDraft, setEmailDraft] = useState<string | null>(null);
   const [awaitingApproval, setAwaitingApproval] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
+  // Hybrid email editing states
+  const [isEditingDraft, setIsEditingDraft] = useState(false); // manual edit mode
+  const [editInput, setEditInput] = useState(""); // manual edit content
+  const [isLlmEditing, setIsLlmEditing] = useState(false); // LLM edit mode
+  const [llmEditInput, setLlmEditInput] = useState(""); // user's LLM instruction
+  const [llmEditLoading, setLlmEditLoading] = useState(false); // loading state for LLM edit
+
   useEffect(() => {
+    console.log('[DEBUG] loading state:', loading, 'input:', input, 'button disabled:', loading || !input.trim());
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
@@ -34,12 +42,16 @@ const Chat: React.FC = () => {
   }
 
   const sendMessage = async () => {
-    if (!input.trim()) return;
+    if (!input.trim()) {
+      console.log('[DEBUG] sendMessage: input is empty or whitespace');
+      return;
+    }
     setError(null);
     const userMessage: Message = { role: "user", content: input };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setLoading(true);
+    console.log('[DEBUG] sendMessage: sending message, loading set to true');
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
@@ -54,12 +66,17 @@ const Chat: React.FC = () => {
       }
     } catch (err: any) {
       setError("Failed to get response. Please try again.");
+      console.error('[DEBUG] sendMessage: error', err);
     } finally {
       setLoading(false);
+      console.log('[DEBUG] sendMessage: finished, loading set to false');
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log('[DEBUG] Input changed:', e.target.value);
+    setInput(e.target.value);
+  };
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && !loading) {
       sendMessage();
@@ -87,7 +104,6 @@ const Chat: React.FC = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: emailForm.email,
-          recipientName: emailForm.recipientName,
           agentName: emailForm.agentName,
           clientName: emailForm.clientName,
           agentNote: emailForm.agentNote,
@@ -149,7 +165,6 @@ const Chat: React.FC = () => {
         <section className="bg-white rounded-lg p-4 mb-2 border border-blue-200 shadow">
           <EmailForm
             email={emailForm.email}
-            recipientName={emailForm.recipientName}
             agentName={emailForm.agentName}
             clientName={emailForm.clientName}
             agentNote={emailForm.agentNote}
@@ -161,14 +176,110 @@ const Chat: React.FC = () => {
         </section>
       )}
       {/* Email Preview Section: appears below form, does not affect chat or form height */}
-      {awaitingApproval && emailDraft && (
+      {!showEmailForm && awaitingApproval && emailDraft && (
         <section className="bg-yellow-50 rounded-lg p-4 mb-2 border border-yellow-300 shadow">
           <EmailPreview
             draft={emailDraft}
             onSend={handleApproveSend}
-            onEdit={handleEditDraft}
             onCancel={handleCancelEmail}
           />
+          {/* Hybrid editing options */}
+          <div className="mt-4 flex flex-col gap-4">
+            {/* Manual Edit */}
+            {!isEditingDraft && !isLlmEditing && (
+              <div className="flex gap-2">
+                <button
+                  className="px-4 py-2 bg-blue-600 text-white rounded font-bold"
+                  onClick={() => {
+                    setIsEditingDraft(true);
+                    setEditInput(emailDraft);
+                  }}
+                >
+                  Edit Manually
+                </button>
+                <button
+                  className="px-4 py-2 bg-purple-600 text-white rounded font-bold"
+                  onClick={() => setIsLlmEditing(true)}
+                >
+                  Ask AI to Edit
+                </button>
+              </div>
+            )}
+            {/* Manual Edit Mode */}
+            {isEditingDraft && (
+              <div className="flex flex-col gap-2">
+                <textarea
+                  className="w-full p-2 rounded border border-gray-300 min-h-[300px]"
+                  value={editInput}
+                  onChange={e => setEditInput(e.target.value)}
+                />
+                <div className="flex gap-2">
+                  <button
+                    className="px-4 py-2 bg-green-600 text-white rounded font-bold"
+                    onClick={() => {
+                      setEmailDraft(editInput);
+                      setIsEditingDraft(false);
+                    }}
+                  >
+                    Save
+                  </button>
+                  <button
+                    className="px-4 py-2 bg-gray-400 text-white rounded font-bold"
+                    onClick={() => setIsEditingDraft(false)}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            )}
+            {/* LLM Edit Mode */}
+            {isLlmEditing && (
+              <div className="flex flex-col gap-2">
+                <input
+                  className="w-full p-2 rounded border border-gray-300"
+                  type="text"
+                  placeholder="Describe how you'd like the email changed (e.g., 'Make it more formal')"
+                  value={llmEditInput}
+                  onChange={e => setLlmEditInput(e.target.value)}
+                  disabled={llmEditLoading}
+                />
+                <div className="flex gap-2">
+                  <button
+                    className="px-4 py-2 bg-purple-600 text-white rounded font-bold"
+                    onClick={async () => {
+                      setLlmEditLoading(true);
+                      try {
+                        const res = await fetch("/api/send-offers", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify({ draft: emailDraft, instruction: llmEditInput })
+                        });
+                        if (!res.ok) throw new Error("Failed to edit draft with AI.");
+                        const data = await res.json();
+                        setEmailDraft(data.draftEmail);
+                        setIsLlmEditing(false);
+                        setLlmEditInput("");
+                      } catch (err) {
+                        setError("Failed to edit draft with AI.");
+                      } finally {
+                        setLlmEditLoading(false);
+                      }
+                    }}
+                    disabled={llmEditLoading || !llmEditInput.trim()}
+                  >
+                    {llmEditLoading ? "Asking AI..." : "Ask AI"}
+                  </button>
+                  <button
+                    className="px-4 py-2 bg-gray-400 text-white rounded font-bold"
+                    onClick={() => setIsLlmEditing(false)}
+                    disabled={llmEditLoading}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </section>
       )}
       {error && <div className="text-red-600 mb-2 text-sm">{error}</div>}
