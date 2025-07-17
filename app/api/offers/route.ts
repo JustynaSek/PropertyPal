@@ -1,8 +1,19 @@
 import { NextRequest } from "next/server";
-import { addDocumentToVectorStore, Property } from "@/lib/vectorStore";
+import { addDocumentToVectorStore, Property, listAllOffersFromVectorStore } from "@/lib/vectorStore";
+import { Index } from "@upstash/vector";
+// import offersData from "@/lib/data/offers.json";
 
 function generateId() {
   return Math.random().toString(36).slice(2) + Date.now().toString(36);
+}
+
+export async function GET() {
+  try {
+    const offers = await listAllOffersFromVectorStore();
+    return new Response(JSON.stringify({ offers }), { status: 200 });
+  } catch (err: any) {
+    return new Response(JSON.stringify({ error: err.message || "Unknown error" }), { status: 500 });
+  }
 }
 
 export async function POST(req: NextRequest) {

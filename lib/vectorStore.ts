@@ -48,7 +48,33 @@ export async function addDocumentToVectorStore(property: Property) {
   `;
   const doc = new Document({
     pageContent,
-    metadata: { ...property }
+    metadata: { ...property },
+    id: property.id // Ensure the vector ID matches the property ID
   });
   await vectorStore.addDocuments([doc]);
+}
+
+export async function listAllOffersFromVectorStore() {
+  // Use the Upstash Index directly for range scan
+  const index = new Index({
+    url: process.env.UPSTASH_VECTOR_REST_URL!,
+    token: process.env.UPSTASH_VECTOR_REST_TOKEN!,
+  });
+  let offers: any[] = [];
+  let cursor = "";
+  do {
+    const res = await index.range({
+      cursor,
+      limit: 100,
+      includeMetadata: true,
+      includeData: false,
+    });
+    // Return both the Upstash vector's id and the metadata
+    offers = offers.concat(res.vectors.map((v: any) => ({
+      vectorId: v.id, // Upstash vector's UUID
+      ...v.metadata
+    })));
+    cursor = res.nextCursor;
+  } while (cursor);
+  return offers;
 } 

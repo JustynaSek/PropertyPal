@@ -18,6 +18,12 @@ export default function Home() {
         >
           + Add New Offer
         </a>
+        <a
+          href="/offers"
+          className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow transition mb-8 ml-4"
+        >
+          View All Offers
+        </a>
         {/* ...other app content can go here... */}
       </div>
       {/* Chat widget removed. Use the Chat page instead. */}

@@ -16,7 +16,8 @@ async function main() {
     `;
     return new Document({
       pageContent,
-      metadata: { ...offer }
+      metadata: { ...offer },
+      id: offer.id // Ensure the vector ID matches the property ID
     });
   });
 
