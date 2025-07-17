@@ -1,3 +1,6 @@
+
+
+
 export const metadata = {
   title: "Real Estate AI Assistant",
   description: "Your AI-powered real estate assistant. Instantly find, compare, and explore property offers tailored to your needs."

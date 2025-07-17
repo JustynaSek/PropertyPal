@@ -99,17 +99,19 @@ const Chat: React.FC = () => {
         setEmailLoading(false);
         return;
       }
-      const res = await fetch("/api/send-offers", {
+      const endpoint = "/api/send-offers/preview";
+      console.log('[EMAIL PREVIEW] Calling endpoint:', endpoint);
+      const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          email: emailForm.email,
           agentName: emailForm.agentName,
           clientName: emailForm.clientName,
           agentNote: emailForm.agentNote,
           offers,
         }),
       });
+      console.log('[EMAIL PREVIEW] Response status:', res.status);
       if (!res.ok) throw new Error("Failed to generate email draft.");
       const data = await res.json();
       setEmailDraft(data.draftEmail);
@@ -124,9 +126,31 @@ const Chat: React.FC = () => {
   };
 
   // Approval handlers (send/edit/cancel)
-  const handleApproveSend = () => {
-    setAwaitingApproval(false);
-    setMessages((prev) => [...prev, { role: "assistant", content: "✅ Email sent! (Simulation)" }]);
+  const handleApproveSend = async () => {
+    console.log('[SEND EMAIL] Send button clicked');
+    console.log('[SEND EMAIL] emailDraft:', emailDraft);
+    console.log('[SEND EMAIL] emailForm:', emailForm);
+    if (!emailForm.email || !emailForm.agentName || !emailDraft) {
+      setError('Missing recipient email, agent name, or draft.');
+      return;
+    }
+    try {
+      const res = await fetch('/api/send-offers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: emailForm.email,
+          agentName: emailForm.agentName,
+          draftEmail: emailDraft,
+        }),
+      });
+      if (!res.ok) throw new Error('Failed to send email.');
+      setMessages((prev) => [...prev, { role: "assistant", content: "✅ Email sent!" }]);
+    } catch (err) {
+      setError('Failed to send email.');
+    } finally {
+      setAwaitingApproval(false);
+    }
   };
   const handleEditDraft = () => {
     setShowEmailForm(true);
@@ -249,7 +273,7 @@ const Chat: React.FC = () => {
                     onClick={async () => {
                       setLlmEditLoading(true);
                       try {
-                        const res = await fetch("/api/send-offers", {
+                        const res = await fetch("/api/send-offers/edit", {
                           method: "POST",
                           headers: { "Content-Type": "application/json" },
                           body: JSON.stringify({ draft: emailDraft, instruction: llmEditInput })

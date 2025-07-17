@@ -37,5 +37,63 @@
     "amenities": ["elevator", "air conditioning", "city view"],
     "image_url": "https://placehold.co/600x400/90EE90/000000?text=Apartment+2",
     "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-krakow-kazimierz-ID4k9A.html"
+  },
+  {
+    "id": "3",
+    "title": "Luxury Penthouse with Skyline View in Wroclaw",
+    "type": "apartment",
+    "location": {
+      "city": "Wroclaw",
+      "district": "Stare Miasto",
+      "neighborhood": "Rynek"
+    },
+    "price": 2200000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 1800,
+    "garden_available": false,
+    "description": "A luxury penthouse with panoramic city views, high-end finishes, and a private rooftop terrace. Perfect for entertaining guests.",
+    "amenities": ["rooftop terrace", "concierge", "underground parking", "smart home"],
+    "image_url": "https://placehold.co/600x400/FFD700/000000?text=Penthouse+3",
+    "listing_url": "https://www.otodom.pl/pl/oferta/penthouse-wroclaw-rynek-ID4k9B.html"
+  },
+  {
+    "id": "4",
+    "title": "Cozy Cottage Near the Forest in Zakopane",
+    "type": "house",
+    "location": {
+      "city": "Zakopane",
+      "district": "Centrum",
+      "neighborhood": "Krupowki"
+    },
+    "price": 650000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 1,
+    "square_footage": 900,
+    "garden_available": true,
+    "garden_size_sqft": 500,
+    "description": "Charming wooden cottage close to the forest and hiking trails. Ideal for a holiday home or rental investment.",
+    "amenities": ["fireplace", "garden", "mountain view"],
+    "image_url": "https://placehold.co/600x400/8B4513/FFFFFF?text=Cottage+4",
+    "listing_url": "https://www.otodom.pl/pl/oferta/cottage-zakopane-krupowki-ID4k9C.html"
+  },
+  {
+    "id": "5",
+    "title": "Modern Loft in Gdansk Old Town",
+    "type": "apartment",
+    "location": {
+      "city": "Gdansk",
+      "district": "Srodmiescie",
+      "neighborhood": "Old Town"
+    },
+    "price": 990000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 950,
+    "garden_available": false,
+    "description": "Stylish loft apartment in a renovated historic building, featuring exposed brick, high ceilings, and modern amenities. Walk to the river and main attractions.",
+    "amenities": ["historic building", "high ceilings", "modern kitchen", "city center"],
+    "image_url": "https://placehold.co/600x400/4682B4/FFFFFF?text=Loft+5",
+    "listing_url": "https://www.otodom.pl/pl/oferta/loft-gdansk-oldtown-ID4k9D.html"
   }
 ]
