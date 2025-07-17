@@ -25,6 +25,8 @@ const OffersPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [selectedOffer, setSelectedOffer] = useState<Offer | null>(null);
   const [showEditModal, setShowEditModal] = useState(false);
+  const [editForm, setEditForm] = useState<Offer | null>(null);
+  const [editLoading, setEditLoading] = useState(false);
 
   useEffect(() => {
     const fetchOffers = async () => {
@@ -45,7 +47,58 @@ const OffersPage: React.FC = () => {
 
   const handleEdit = (offer: Offer) => {
     setSelectedOffer(offer);
+    setEditForm({ ...offer });
     setShowEditModal(true);
+  };
+
+  const handleEditFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (!editForm) return;
+    const { name, value, type } = e.target;
+    let fieldValue: any = value;
+    if (type === "checkbox" && e.target instanceof HTMLInputElement) {
+      fieldValue = e.target.checked;
+    }
+    setEditForm((prev) =>
+      prev ? {
+        ...prev,
+        [name]: fieldValue
+      } : null
+    );
+  };
+
+  const handleEditFormArrayChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!editForm) return;
+    const { name, value } = e.target;
+    setEditForm((prev) =>
+      prev ? {
+        ...prev,
+        [name]: value.split(",").map((v) => v.trim()).filter(Boolean)
+      } : null
+    );
+  };
+
+  const handleEditSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editForm) return;
+    setEditLoading(true);
+    setError(null);
+    try {
+      const res = await fetch(`/api/offers/${editForm.vectorId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(editForm)
+      });
+      if (!res.ok) throw new Error("Failed to update offer");
+      const updated = await res.json();
+      setOffers((prev) => prev.map((o) => o.vectorId === editForm.vectorId ? updated.offer : o));
+      setShowEditModal(false);
+      setSelectedOffer(null);
+      setEditForm(null);
+    } catch (err: any) {
+      setError(err.message || "Unknown error");
+    } finally {
+      setEditLoading(false);
+    }
   };
 
   const handleDelete = async (offer: Offer) => {
@@ -121,15 +174,34 @@ const OffersPage: React.FC = () => {
           </tbody>
         </table>
       )}
-      {/* EditOfferModal will be implemented and shown here */}
-      {showEditModal && selectedOffer && (
+      {showEditModal && editForm && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg min-w-[400px] max-w-lg w-full">
             <h2 className="text-xl font-bold mb-4">Edit Offer</h2>
-            {/* TODO: EditOfferModal form goes here */}
-            <button className="mt-4 px-4 py-2 bg-gray-400 text-white rounded font-bold" onClick={() => setShowEditModal(false)}>
-              Cancel
-            </button>
+            <form onSubmit={handleEditSubmit} className="space-y-3">
+              <input type="text" name="title" value={editForm.title} onChange={handleEditFormChange} className="w-full border p-2 rounded" placeholder="Title" required />
+              <input type="text" name="type" value={editForm.type} onChange={handleEditFormChange} className="w-full border p-2 rounded" placeholder="Type" required />
+              <input type="text" name="city" value={editForm.location.city} onChange={e => setEditForm(f => f ? ({ ...f, location: { ...f.location, city: e.target.value } }) : null)} className="w-full border p-2 rounded" placeholder="City" required />
+              <input type="text" name="district" value={editForm.location.district} onChange={e => setEditForm(f => f ? ({ ...f, location: { ...f.location, district: e.target.value } }) : null)} className="w-full border p-2 rounded" placeholder="District" required />
+              <input type="text" name="neighborhood" value={editForm.location.neighborhood} onChange={e => setEditForm(f => f ? ({ ...f, location: { ...f.location, neighborhood: e.target.value } }) : null)} className="w-full border p-2 rounded" placeholder="Neighborhood" required />
+              <input type="number" name="price" value={editForm.price} onChange={handleEditFormChange} className="w-full border p-2 rounded" placeholder="Price" required />
+              <input type="number" name="number_of_rooms" value={editForm.number_of_rooms} onChange={handleEditFormChange} className="w-full border p-2 rounded" placeholder="Number of Rooms" required />
+              <input type="number" name="number_of_bathrooms" value={editForm.number_of_bathrooms} onChange={handleEditFormChange} className="w-full border p-2 rounded" placeholder="Number of Bathrooms" required />
+              <input type="number" name="square_footage" value={editForm.square_footage} onChange={handleEditFormChange} className="w-full border p-2 rounded" placeholder="Square Footage" required />
+              <label className="flex items-center gap-2">
+                <input type="checkbox" name="garden_available" checked={editForm.garden_available} onChange={handleEditFormChange} />
+                Garden Available
+              </label>
+              <input type="number" name="garden_size_sqft" value={editForm.garden_size_sqft || ""} onChange={handleEditFormChange} className="w-full border p-2 rounded" placeholder="Garden Size (sqft)" />
+              <textarea name="description" value={editForm.description} onChange={handleEditFormChange} className="w-full border p-2 rounded" placeholder="Description" required />
+              <input type="text" name="amenities" value={editForm.amenities.join(", ")} onChange={handleEditFormArrayChange} className="w-full border p-2 rounded" placeholder="Amenities (comma separated)" />
+              <input type="text" name="image_url" value={editForm.image_url} onChange={handleEditFormChange} className="w-full border p-2 rounded" placeholder="Image URL" />
+              <input type="text" name="listing_url" value={editForm.listing_url || ""} onChange={handleEditFormChange} className="w-full border p-2 rounded" placeholder="Listing URL" />
+              <div className="flex gap-2 mt-4">
+                <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded font-bold" disabled={editLoading}>{editLoading ? "Saving..." : "Save"}</button>
+                <button type="button" className="px-4 py-2 bg-gray-400 text-white rounded font-bold" onClick={() => { setShowEditModal(false); setSelectedOffer(null); setEditForm(null); }}>Cancel</button>
+              </div>
+            </form>
           </div>
         </div>
       )}
