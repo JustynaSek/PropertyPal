@@ -99,59 +99,70 @@ const AgentOfferForm: React.FC = () => {
       className="w-full max-w-2xl bg-white p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col gap-6"
     >
       <h2 className="text-2xl font-bold mb-2 text-gray-800">Add New Property Offer</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="flex flex-col gap-4">
-          <label className="text-gray-700"><span className="font-bold">Title</span>
-            <input name="title" value={form.title} onChange={handleChange} placeholder="Offer Title" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
-          </label>
-          <label className="text-gray-700"><span className="font-bold">Type</span>
-            <select name="type" value={form.type} onChange={handleChange} required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-              <option value="house">House</option>
-              <option value="apartment">Apartment</option>
-            </select>
-          </label>
-          <label className="text-gray-700"><span className="font-bold">City</span>
-            <input name="city" value={form.city} onChange={handleChange} placeholder="City" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
-          </label>
-          <label className="text-gray-700"><span className="font-bold">District</span>
-            <input name="district" value={form.district} onChange={handleChange} placeholder="District" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
-          </label>
-          <label className="text-gray-700"><span className="font-bold">Neighborhood</span>
-            <input name="neighborhood" value={form.neighborhood} onChange={handleChange} placeholder="Neighborhood" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
-          </label>
-          <label className="text-gray-700"><span className="font-bold">Price</span>
-            <input name="price" value={form.price} onChange={handleChange} placeholder="Price" type="number" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
-          </label>
-          <label className="text-gray-700"><span className="font-bold">Number of rooms</span>
-            <input name="number_of_rooms" value={form.number_of_rooms} onChange={handleChange} placeholder="Number of rooms" type="number" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
-          </label>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+        <div>
+          <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title</label>
+          <input id="title" name="title" value={form.title} onChange={handleChange} required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
         </div>
-        <div className="flex flex-col gap-4">
-          <label className="text-gray-700"><span className="font-bold">Number of bathrooms</span>
-            <input name="number_of_bathrooms" value={form.number_of_bathrooms} onChange={handleChange} placeholder="Number of bathrooms" type="number" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
-          </label>
-          <label className="text-gray-700"><span className="font-bold">Square footage</span>
-            <input name="square_footage" value={form.square_footage} onChange={handleChange} placeholder="Square footage" type="number" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
-          </label>
-          <label className="text-gray-700 inline-flex items-center gap-2"><input name="garden_available" type="checkbox" checked={form.garden_available} onChange={handleChange} className="rounded border-gray-300 text-blue-600 focus:ring-blue-500" /><span className="font-bold">Garden available</span></label>
-          <label className="text-gray-700"><span className="font-bold">Garden size (sqft)</span>
-            <input name="garden_size_sqft" value={form.garden_size_sqft} onChange={handleChange} placeholder="Garden size (sqft)" type="number" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
-          </label>
-          <label className="text-gray-700"><span className="font-bold">Description</span>
-            <textarea name="description" value={form.description} onChange={handleChange} placeholder="Description" required rows={2} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
-          </label>
-          <label className="text-gray-700"><span className="font-bold">Amenities (comma separated)</span>
-            <input name="amenities" value={form.amenities} onChange={handleChange} placeholder="Amenities (comma separated)" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
-          </label>
+        <div>
+          <label htmlFor="type" className="block text-sm font-medium text-gray-700">Type</label>
+          <select id="type" name="type" value={form.type} onChange={handleChange} required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+            <option value="house">House</option>
+            <option value="apartment">Apartment</option>
+          </select>
         </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <label className="text-gray-700"><span className="font-bold">Image URL</span>
-          <input name="image_url" value={form.image_url} onChange={handleChange} placeholder="Image URL" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
-        </label>
-        <label className="text-gray-700"><span className="font-bold">Offer URL</span>
-          <input name="listing_url" value={form.listing_url} onChange={handleChange} placeholder="Offer URL" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
-        </label>
+        <div>
+          <label htmlFor="city" className="block text-sm font-medium text-gray-700">City</label>
+          <input id="city" name="city" value={form.city} onChange={handleChange} required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label htmlFor="district" className="block text-sm font-medium text-gray-700">District</label>
+          <input id="district" name="district" value={form.district} onChange={handleChange} required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label htmlFor="neighborhood" className="block text-sm font-medium text-gray-700">Neighborhood</label>
+          <input id="neighborhood" name="neighborhood" value={form.neighborhood} onChange={handleChange} required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label htmlFor="price" className="block text-sm font-medium text-gray-700">Price</label>
+          <input id="price" name="price" value={form.price} onChange={handleChange} type="number" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label htmlFor="number_of_rooms" className="block text-sm font-medium text-gray-700">Number of rooms</label>
+          <input id="number_of_rooms" name="number_of_rooms" value={form.number_of_rooms} onChange={handleChange} type="number" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label htmlFor="number_of_bathrooms" className="block text-sm font-medium text-gray-700">Number of bathrooms</label>
+          <input id="number_of_bathrooms" name="number_of_bathrooms" value={form.number_of_bathrooms} onChange={handleChange} type="number" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label htmlFor="square_footage" className="block text-sm font-medium text-gray-700">Square footage</label>
+          <input id="square_footage" name="square_footage" value={form.square_footage} onChange={handleChange} type="number" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+        </div>
+        <div className="flex items-center gap-2 pt-5">
+          <input id="garden_available" name="garden_available" type="checkbox" checked={form.garden_available} onChange={handleChange} className="rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+          <label htmlFor="garden_available" className="text-sm font-medium text-gray-700">Garden available</label>
+        </div>
+        <div>
+          <label htmlFor="garden_size_sqft" className="block text-sm font-medium text-gray-700">Garden size (sqft)</label>
+          <input id="garden_size_sqft" name="garden_size_sqft" value={form.garden_size_sqft} onChange={handleChange} type="number" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+        </div>
+        <div className="md:col-span-2">
+          <label htmlFor="description" className="block text-sm font-medium text-gray-700">Description</label>
+          <textarea id="description" name="description" value={form.description} onChange={handleChange} required rows={3} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+        </div>
+        <div className="md:col-span-2">
+          <label htmlFor="amenities" className="block text-sm font-medium text-gray-700">Amenities (comma separated)</label>
+          <input id="amenities" name="amenities" value={form.amenities} onChange={handleChange} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+        </div>
+        <div className="md:col-span-2">
+          <label htmlFor="image_url" className="block text-sm font-medium text-gray-700">Image URL</label>
+          <input id="image_url" name="image_url" value={form.image_url} onChange={handleChange} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+        </div>
+        <div className="md:col-span-2">
+          <label htmlFor="listing_url" className="block text-sm font-medium text-gray-700">Offer URL</label>
+          <input id="listing_url" name="listing_url" value={form.listing_url} onChange={handleChange} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+        </div>
       </div>
       <button
         type="submit"
