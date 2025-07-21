@@ -11,24 +11,16 @@ interface ChatMessageListProps {
 }
 
 const ChatMessageList: React.FC<ChatMessageListProps> = ({ messages }) => (
-  <>
+  <div className="flex flex-col gap-3">
     {messages.filter(msg => msg.role !== "email-preview").map((msg, i) => (
       <div
         key={i}
-        className={`flex mb-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+        className={`flex items-end mb-0 ${msg.role === "user" ? "justify-end" : "justify-start"} animate-fadeIn`}
       >
-        <div
-          className={`rounded-xl p-3 max-w-[90%] sm:max-w-[75%] shadow-sm text-base break-words ${
-            msg.role === "user"
-              ? "bg-blue-100 text-gray-800 shadow-blue-200/50"
-              : "bg-gray-100 text-gray-800 shadow-gray-200/50"
-          }`}
-        >
-          <ChatMessage role={msg.role} content={msg.content} />
-        </div>
+        <ChatMessage role={msg.role} content={msg.content} />
       </div>
     ))}
-  </>
+  </div>
 );
 
 export default ChatMessageList; 

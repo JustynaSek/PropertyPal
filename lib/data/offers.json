@@ -21,79 +21,1931 @@
   },
   {
     "id": "2",
-    "title": "Modern Apartment in the Heart of Kazimierz, Krakow",
+    "title": "Modern Apartment with City View in Śródmieście, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Śródmieście",
+      "neighborhood": "Powiśle"
+    },
+    "price": 850000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 950,
+    "garden_available": false,
+    "description": "Bright and modern apartment in the heart of the city, offering stunning views and easy access to public transport and amenities.",
+    "amenities": ["balcony", "city view", "gym access", "concierge service", "underground parking"],
+    "image_url": "https://placehold.co/600x400/D8BFD8/000000?text=Apartment+2",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-srodmiescie-powisle-ID9yLp.html"
+  },
+  {
+    "id": "3",
+    "title": "Cozy Studio Flat near Market Square in Old Town, Krakow",
+    "type": "apartment",
+    "location": {
+      "city": "Krakow",
+      "district": "Stare Miasto",
+      "neighborhood": "Old Town"
+    },
+    "price": 350000,
+    "number_of_rooms": 1,
+    "number_of_bathrooms": 1,
+    "square_footage": 350,
+    "garden_available": false,
+    "description": "Charming studio apartment perfect for singles or students, located just steps from Krakow's Main Market Square.",
+    "amenities": ["furnished", "central location", "historical building"],
+    "image_url": "https://placehold.co/600x400/FFFACD/000000?text=Apartment+3",
+    "listing_url": "https://www.otodom.pl/pl/oferta/kawalerka-krakow-stare-miasto-ID7aBv.html"
+  },
+  {
+    "id": "4",
+    "title": "Detached House with Large Plot in Bielany, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Bielany",
+      "neighborhood": "Wawrzyszew"
+    },
+    "price": 1800000,
+    "number_of_rooms": 6,
+    "number_of_bathrooms": 4,
+    "square_footage": 3200,
+    "garden_available": true,
+    "garden_size_sqft": 2500,
+    "description": "Expansive detached house with a large, private plot, ideal for a growing family. Close to nature reserves and local amenities.",
+    "amenities": ["double garage", "fireplace", "utility room", "terrace", "large plot"],
+    "image_url": "https://placehold.co/600x400/B0E0E6/000000?text=House+4",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-bielany-wawrzyszew-ID6cPw.html"
+  },
+  {
+    "id": "5",
+    "title": "Loft Apartment in Renovated Brewery in Browary Warszawskie, Wola",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wola",
+      "neighborhood": "Browary Warszawskie"
+    },
+    "price": 990000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 800,
+    "garden_available": false,
+    "description": "Stylish loft apartment in a historic brewery complex, featuring high ceilings and industrial design. Access to unique restaurants and shops.",
+    "amenities": ["high ceilings", "industrial style", "balcony", "fitness center", "24/7 security"],
+    "image_url": "https://placehold.co/600x400/DDA0DD/000000?text=Apartment+5",
+    "listing_url": "https://www.otodom.pl/pl/oferta/loft-warszawa-wola-browary-ID8dRq.html"
+  },
+  {
+    "id": "6",
+    "title": "Semi-Detached House with Garden in Ursynów, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Ursynów",
+      "neighborhood": "Natolin"
+    },
+    "price": 950000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 1800,
+    "garden_available": true,
+    "garden_size_sqft": 1000,
+    "description": "Comfortable semi-detached house with a moderate-sized garden, perfect for a family. Located in a green and quiet area with good transport links.",
+    "amenities": ["garage", "terrace", "storage room", "near park"],
+    "image_url": "https://placehold.co/600x400/F0F8FF/000000?text=House+6",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-ursynow-natolin-ID2fGh.html"
+  },
+  {
+    "id": "7",
+    "title": "Penthouse with Panoramic Views in Sky Tower, Wroclaw",
+    "type": "apartment",
+    "location": {
+      "city": "Wroclaw",
+      "district": "Krzyki",
+      "neighborhood": "Huby"
+    },
+    "price": 1500000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 3,
+    "square_footage": 1800,
+    "garden_available": false,
+    "description": "Luxurious penthouse offering unparalleled panoramic views of Wroclaw from the iconic Sky Tower. High-end finishes and spacious layout.",
+    "amenities": ["panoramic view", "24/7 security", "fitness center", "swimming pool", "private elevator access"],
+    "image_url": "https://placehold.co/600x400/BA55D3/000000?text=Apartment+7",
+    "listing_url": "https://www.otodom.pl/pl/oferta/penthouse-wroclaw-krzyki-huby-ID1gHi.html"
+  },
+  {
+    "id": "8",
+    "title": "Family House with Garden in Gdynia Dąbrowa",
+    "type": "house",
+    "location": {
+      "city": "Gdynia",
+      "district": "Dąbrowa",
+      "neighborhood": "Dąbrowa"
+    },
+    "price": 850000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2200,
+    "garden_available": true,
+    "garden_size_sqft": 1200,
+    "description": "Comfortable family house located in a quiet, green part of Gdynia, close to nature and city amenities. Well-maintained garden.",
+    "amenities": ["garage", "balcony", "terrace", "quiet area", "good transport"],
+    "image_url": "https://placehold.co/600x400/FFE4E1/000000?text=House+8",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-gdynia-dabrowa-ID3jKl.html"
+  },
+  {
+    "id": "9",
+    "title": "Apartment with River View in Gdańsk Old Town",
+    "type": "apartment",
+    "location": {
+      "city": "Gdańsk",
+      "district": "Śródmieście",
+      "neighborhood": "Old Town"
+    },
+    "price": 700000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 700,
+    "garden_available": false,
+    "description": "Cozy apartment with picturesque views of the Motława River, situated in the heart of Gdańsk Old Town, surrounded by historic buildings.",
+    "amenities": ["river view", "historic building", "furnished", "central location"],
+    "image_url": "https://placehold.co/600x400/ADD8E6/000000?text=Apartment+9",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-gdansk-stare-miasto-ID5nMp.html"
+  },
+  {
+    "id": "10",
+    "title": "Townhouse with Garden in Wilanów, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wilanów",
+      "neighborhood": "Zawady"
+    },
+    "price": 1350000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 2000,
+    "garden_available": true,
+    "garden_size_sqft": 800,
+    "description": "Modern townhouse in the desirable Wilanów district, offering comfortable living with a small private garden. Close to international schools.",
+    "amenities": ["garage", "terrace", "modern design", "near schools"],
+    "image_url": "https://placehold.co/600x400/D8BFD8/000000?text=House+10",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-wilanow-zawady-ID7pQr.html"
+  },
+  {
+    "id": "11",
+    "title": "Sunny Apartment in Ursus, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Ursus",
+      "neighborhood": "Niedźwiadek"
+    },
+    "price": 550000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 1,
+    "square_footage": 750,
+    "garden_available": false,
+    "description": "Bright and spacious apartment in a well-connected part of Ursus. Ideal for a family, close to parks and shops.",
+    "amenities": ["balcony", "storage unit", "playground", "good transport"],
+    "image_url": "https://placehold.co/600x400/FFFACD/000000?text=Apartment+11",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-ursus-niedzwiawek-ID9sTu.html"
+  },
+  {
+    "id": "12",
+    "title": "Villa with Pool in Konstancin-Jeziorna",
+    "type": "house",
+    "location": {
+      "city": "Konstancin-Jeziorna",
+      "district": "Centrum",
+      "neighborhood": "Park Zdrojowy"
+    },
+    "price": 2500000,
+    "number_of_rooms": 7,
+    "number_of_bathrooms": 5,
+    "square_footage": 4000,
+    "garden_available": true,
+    "garden_size_sqft": 3000,
+    "description": "Magnificent villa with a private swimming pool and expansive garden, located in the prestigious spa town of Konstancin-Jeziorna. Perfect for luxury living.",
+    "amenities": ["swimming pool", "sauna", "multi-car garage", "security system", "large plot"],
+    "image_url": "https://placehold.co/600x400/B0E0E6/000000?text=House+12",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-konstancin-jeziorna-ID1vXy.html"
+  },
+  {
+    "id": "13",
+    "title": "Apartment near University in Ochota, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Ochota",
+      "neighborhood": "Stara Ochota"
+    },
+    "price": 620000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 600,
+    "garden_available": false,
+    "description": "Well-maintained apartment in a vibrant district, ideal for students or young professionals. Close to universities and city center.",
+    "amenities": ["furnished", "good transport", "near university", "balcony"],
+    "image_url": "https://placehold.co/600x400/DDA0DD/000000?text=Apartment+13",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-ochota-ID3wAz.html"
+  },
+  {
+    "id": "14",
+    "title": "New Build House in Wawer, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wawer",
+      "neighborhood": "Radość"
+    },
+    "price": 1100000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2300,
+    "garden_available": true,
+    "garden_size_sqft": 1000,
+    "description": "Brand new family house in a tranquil green area, offering modern design and comfortable living. Ready for immediate move-in.",
+    "amenities": ["newly built", "garage", "terrace", "quiet area", "green surroundings"],
+    "image_url": "https://placehold.co/600x400/F0F8FF/000000?text=House+14",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-wawer-radosc-ID5xBd.html"
+  },
+  {
+    "id": "15",
+    "title": "Investment Apartment in Centrum, Poznan",
+    "type": "apartment",
+    "location": {
+      "city": "Poznan",
+      "district": "Stare Miasto",
+      "neighborhood": "Centrum"
+    },
+    "price": 480000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 550,
+    "garden_available": false,
+    "description": "Excellent investment opportunity in Poznan's city center, perfect for rental or short-term stays. Fully furnished and equipped.",
+    "amenities": ["investment opportunity", "furnished", "central location", "good rental yield"],
+    "image_url": "https://placehold.co/600x400/BA55D3/000000?text=Apartment+15",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-poznan-stare-miasto-ID7yCe.html"
+  },
+  {
+    "id": "16",
+    "title": "Spacious House with Attic in Białołęka, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Białołęka",
+      "neighborhood": "Tarchomin"
+    },
+    "price": 890000,
+    "number_of_rooms": 6,
+    "number_of_bathrooms": 3,
+    "square_footage": 2800,
+    "garden_available": true,
+    "garden_size_sqft": 1400,
+    "description": "Large family house with a finished attic, providing extra space for various uses. Located in a developing green area.",
+    "amenities": ["attic", "garage", "fireplace", "balcony", "quiet neighborhood"],
+    "image_url": "https://placehold.co/600x400/FFE4E1/000000?text=House+16",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-bialoleka-tarchomin-ID9zDf.html"
+  },
+  {
+    "id": "17",
+    "title": "Apartment in Modern Complex in Praga-Południe, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Praga-Południe",
+      "neighborhood": "Gocław"
+    },
+    "price": 680000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 850,
+    "garden_available": false,
+    "description": "Comfortable apartment in a modern residential complex with excellent amenities. Close to shopping centers and green spaces.",
+    "amenities": ["balcony", "security", "playground", "underground parking", "nearby shops"],
+    "image_url": "https://placehold.co/600x400/ADD8E6/000000?text=Apartment+17",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-praga-poludnie-goclaw-ID2aEg.html"
+  },
+  {
+    "id": "18",
+    "title": "Charming House near Forest in Józefów",
+    "type": "house",
+    "location": {
+      "city": "Józefów",
+      "district": "Centrum",
+      "neighborhood": "Michalin"
+    },
+    "price": 1400000,
+    "number_of_rooms": 6,
+    "number_of_bathrooms": 4,
+    "square_footage": 3000,
+    "garden_available": true,
+    "garden_size_sqft": 2000,
+    "description": "Beautiful house surrounded by nature, perfect for those seeking peace and quiet. Large garden and direct access to forest paths.",
+    "amenities": ["forest access", "fireplace", "double garage", "terrace", "secluded location"],
+    "image_url": "https://placehold.co/600x400/D8BFD8/000000?text=House+18",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-jozefow-michalin-ID4bFh.html"
+  },
+  {
+    "id": "19",
+    "title": "City Center Apartment with Balcony in Grunwald, Poznan",
+    "type": "apartment",
+    "location": {
+      "city": "Poznan",
+      "district": "Grunwald",
+      "neighborhood": "Łazarz"
+    },
+    "price": 590000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 1,
+    "square_footage": 700,
+    "garden_available": false,
+    "description": "Bright apartment with a spacious balcony in a well-located part of Poznan, offering easy access to city amenities and public transport.",
+    "amenities": ["balcony", "good transport", "furnished", "near shops"],
+    "image_url": "https://placehold.co/600x400/FFFACD/000000?text=Apartment+19",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-poznan-grunwald-lazarz-ID6cGj.html"
+  },
+  {
+    "id": "20",
+    "title": "Modern House near Lake in Piaseczno",
+    "type": "house",
+    "location": {
+      "city": "Piaseczno",
+      "district": "Zalesie Górne",
+      "neighborhood": "Zalesie"
+    },
+    "price": 1050000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 1900,
+    "garden_available": true,
+    "garden_size_sqft": 900,
+    "description": "Contemporary house with a compact garden, situated near a picturesque lake, ideal for those who love outdoor activities.",
+    "amenities": ["near lake", "terrace", "garage", "modern design"],
+    "image_url": "https://placehold.co/600x400/B0E0E6/000000?text=House+20",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-piaseczno-zalesie-gorne-ID8dIk.html"
+  },
+  {
+    "id": "21",
+    "title": "Studio Apartment with Balcony in Wola, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wola",
+      "neighborhood": "Mirów"
+    },
+    "price": 420000,
+    "number_of_rooms": 1,
+    "number_of_bathrooms": 1,
+    "square_footage": 400,
+    "garden_available": false,
+    "description": "Compact and efficient studio apartment with a small balcony, perfect for a single person or as an investment. Good transport links.",
+    "amenities": ["balcony", "furnished", "good transport", "city center access"],
+    "image_url": "https://placehold.co/600x400/DDA0DD/000000?text=Apartment+21",
+    "listing_url": "https://www.otodom.pl/pl/oferta/kawalerka-warszawa-wola-mirow-ID0eJl.html"
+  },
+  {
+    "id": "22",
+    "title": "Semi-Detached House in Rembertów, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Rembertów",
+      "neighborhood": "Zielona"
+    },
+    "price": 780000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 1600,
+    "garden_available": true,
+    "garden_size_sqft": 700,
+    "description": "Functional semi-detached house with a manageable garden, located in a quiet, green district. Ideal for a small family.",
+    "amenities": ["garage", "terrace", "quiet area", "near forest"],
+    "image_url": "https://placehold.co/600x400/F0F8FF/000000?text=House+22",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-rembertow-zielona-ID2fKm.html"
+  },
+  {
+    "id": "23",
+    "title": "Apartment in Old Town, Krakow with Charm",
     "type": "apartment",
     "location": {
       "city": "Krakow",
       "district": "Stare Miasto",
       "neighborhood": "Kazimierz"
     },
-    "price": 850000,
+    "price": 650000,
     "number_of_rooms": 3,
-    "number_of_bathrooms": 2,
-    "square_footage": 1100,
+    "number_of_bathrooms": 1,
+    "square_footage": 800,
     "garden_available": false,
-    "description": "Modern apartment in the heart of Krakow, close to restaurants and cultural attractions. Recently renovated, with a spacious living area.",
-    "amenities": ["elevator", "air conditioning", "city view"],
-    "image_url": "https://placehold.co/600x400/90EE90/000000?text=Apartment+2",
-    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-krakow-kazimierz-ID4k9A.html"
+    "description": "Charming apartment in the historic Kazimierz district, full of character and close to cultural attractions and vibrant cafes.",
+    "amenities": ["historic building", "central location", "high ceilings", "furnished"],
+    "image_url": "https://placehold.co/600x400/BA55D3/000000?text=Apartment+23",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-krakow-stare-miasto-kazimierz-ID4gLn.html"
   },
   {
-    "id": "3",
-    "title": "Luxury Penthouse with Skyline View in Wroclaw",
+    "id": "24",
+    "title": "Family House with Large Garden in Psie Pole, Wroclaw",
+    "type": "house",
+    "location": {
+      "city": "Wroclaw",
+      "district": "Psie Pole",
+      "neighborhood": "Zakrzów"
+    },
+    "price": 980000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2100,
+    "garden_available": true,
+    "garden_size_sqft": 1300,
+    "description": "Spacious family home with a well-maintained large garden, situated in a quiet residential area of Wroclaw. Excellent for families.",
+    "amenities": ["garage", "fireplace", "terrace", "garden shed", "quiet street"],
+    "image_url": "https://placehold.co/600x400/FFE4E1/000000?text=House+24",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-wroclaw-psie-pole-zakrzow-ID6hMo.html"
+  },
+  {
+    "id": "25",
+    "title": "Compact Apartment near Arkadia, Żoliborz",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Żoliborz",
+      "neighborhood": "Marymont"
+    },
+    "price": 510000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 580,
+    "garden_available": false,
+    "description": "Efficiently designed apartment close to Arkadia shopping mall and public transport, ideal for urban living.",
+    "amenities": ["near shopping mall", "good transport", "balcony", "modern finishes"],
+    "image_url": "https://placehold.co/600x400/ADD8E6/000000?text=Apartment+25",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-zoliborz-marymont-ID8iNp.html"
+  },
+  {
+    "id": "26",
+    "title": "Luxury Apartment in Exclusive Development, Wilanów",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wilanów",
+      "neighborhood": "Miasteczko Wilanów"
+    },
+    "price": 1100000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 1200,
+    "garden_available": false,
+    "description": "High-standard apartment in a prestigious development, offering excellent amenities and proximity to green areas and services.",
+    "amenities": ["24/7 security", "gym access", "underground parking", "balcony", "modern kitchen", "air conditioning"],
+    "image_url": "https://placehold.co/600x400/D8BFD8/000000?text=Apartment+26",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-wilanow-miasteczko-ID0jOq.html"
+  },
+  {
+    "id": "27",
+    "title": "Spacious House with Double Garage in Łomianki",
+    "type": "house",
+    "location": {
+      "city": "Łomianki",
+      "district": "Centrum",
+      "neighborhood": "Dąbrowa Leśna"
+    },
+    "price": 1600000,
+    "number_of_rooms": 7,
+    "number_of_bathrooms": 4,
+    "square_footage": 3500,
+    "garden_available": true,
+    "garden_size_sqft": 2000,
+    "description": "Large, well-appointed house with a double garage and ample garden space, ideal for a large family. Close to Kampinos National Park.",
+    "amenities": ["double garage", "fireplace", "sauna", "large garden", "near forest"],
+    "image_url": "https://placehold.co/600x400/FFFACD/000000?text=House+27",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-lomianki-dabrowa-lesna-ID2kPr.html"
+  },
+  {
+    "id": "28",
+    "title": "Apartment in New Gated Community, Praga-Południe",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Praga-Południe",
+      "neighborhood": "Saska Kępa"
+    },
+    "price": 750000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 900,
+    "garden_available": false,
+    "description": "Contemporary apartment in a secure, gated community, offering peace and quiet while being close to the vibrant Saska Kępa area.",
+    "amenities": ["gated community", "balcony", "playground", "security", "modern design"],
+    "image_url": "https://placehold.co/600x400/B0E0E6/000000?text=Apartment+28",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-praga-poludnie-saska-kepa-ID4lQs.html"
+  },
+  {
+    "id": "29",
+    "title": "Country House with Orchard in Otwock",
+    "type": "house",
+    "location": {
+      "city": "Otwock",
+      "district": "Centrum",
+      "neighborhood": "Świder"
+    },
+    "price": 900000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 2,
+    "square_footage": 2000,
+    "garden_available": true,
+    "garden_size_sqft": 4000,
+    "description": "Charming country house with a large orchard and expansive plot, ideal for agricultural enthusiasts or those seeking space and privacy.",
+    "amenities": ["orchard", "large plot", "fireplace", "garage", "quiet area"],
+    "image_url": "https://placehold.co/600x400/DDA0DD/000000?text=House+29",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-otwock-swider-ID6mRt.html"
+  },
+  {
+    "id": "30",
+    "title": "Apartment in a Prestigious Building, Stare Miasto, Wroclaw",
     "type": "apartment",
     "location": {
       "city": "Wroclaw",
       "district": "Stare Miasto",
       "neighborhood": "Rynek"
     },
-    "price": 2200000,
-    "number_of_rooms": 4,
-    "number_of_bathrooms": 2,
-    "square_footage": 1800,
+    "price": 800000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 750,
     "garden_available": false,
-    "description": "A luxury penthouse with panoramic city views, high-end finishes, and a private rooftop terrace. Perfect for entertaining guests.",
-    "amenities": ["rooftop terrace", "concierge", "underground parking", "smart home"],
-    "image_url": "https://placehold.co/600x400/FFD700/000000?text=Penthouse+3",
-    "listing_url": "https://www.otodom.pl/pl/oferta/penthouse-wroclaw-rynek-ID4k9B.html"
+    "description": "Elegant apartment in a renovated historic building, steps away from Wroclaw's Market Square. High-end finishes and classic charm.",
+    "amenities": ["historic building", "central location", "high ceilings", "furnished", "city view"],
+    "image_url": "https://placehold.co/600x400/F0F8FF/000000?text=Apartment+30",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-wroclaw-stare-miasto-rynek-ID8nSu.html"
   },
   {
-    "id": "4",
-    "title": "Cozy Cottage Near the Forest in Zakopane",
+    "id": "31",
+    "title": "Spacious Apartment with Terrace in Mokotów, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Mokotow",
+      "neighborhood": "Stegny"
+    },
+    "price": 920000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 1100,
+    "garden_available": false,
+    "description": "Generously sized apartment with a large terrace, perfect for outdoor entertaining. Located in a sought-after green area of Mokotów.",
+    "amenities": ["large terrace", "underground parking", "storage unit", "near park", "security"],
+    "image_url": "https://placehold.co/600x400/BA55D3/000000?text=Apartment+31",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-mokotow-stegny-ID0oTv.html"
+  },
+  {
+    "id": "32",
+    "title": "House with Land in Ząbki, near Warsaw",
     "type": "house",
     "location": {
-      "city": "Zakopane",
+      "city": "Ząbki",
       "district": "Centrum",
-      "neighborhood": "Krupowki"
+      "neighborhood": "Centrum"
+    },
+    "price": 750000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 1700,
+    "garden_available": true,
+    "garden_size_sqft": 1000,
+    "description": "Practical family house with a decent-sized plot, offering good access to Warsaw while maintaining a suburban feel.",
+    "amenities": ["garage", "terrace", "good transport to Warsaw", "quiet area"],
+    "image_url": "https://placehold.co/600x400/FFE4E1/000000?text=House+32",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-zabki-centrum-ID2pUw.html"
+  },
+  {
+    "id": "33",
+    "title": "Renovated Apartment in Praga-Północ, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Praga-Północ",
+      "neighborhood": "Stara Praga"
+    },
+    "price": 600000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 1,
+    "square_footage": 700,
+    "garden_available": false,
+    "description": "Tastefully renovated apartment in a vibrant, artistic district. Combines historic charm with modern conveniences.",
+    "amenities": ["renovated", "high ceilings", "balcony", "near metro", "artistic neighborhood"],
+    "image_url": "https://placehold.co/600x400/ADD8E6/000000?text=Apartment+33",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-praga-polnoc-stara-praga-ID4qVx.html"
+  },
+  {
+    "id": "34",
+    "title": "Modern Townhouse in Ursus, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Ursus",
+      "neighborhood": "Skoroszów"
+    },
+    "price": 800000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 1750,
+    "garden_available": true,
+    "garden_size_sqft": 600,
+    "description": "Contemporary townhouse in a family-friendly area, offering comfortable living with a small private garden. Close to amenities.",
+    "amenities": ["garage", "terrace", "modern design", "near schools", "playground"],
+    "image_url": "https://placehold.co/600x400/D8BFD8/000000?text=House+34",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-ursus-skoroszow-ID6rWy.html"
+  },
+  {
+    "id": "35",
+    "title": "Apartment near Green Areas in Bielany, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Bielany",
+      "neighborhood": "Wrzeciono"
+    },
+    "price": 530000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 650,
+    "garden_available": false,
+    "description": "Sunny apartment situated close to numerous parks and green spaces, ideal for nature lovers. Good public transport access.",
+    "amenities": ["balcony", "near park", "good transport", "storage unit"],
+    "image_url": "https://placehold.co/600x400/FFFACD/000000?text=Apartment+35",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-bielany-wrzeciono-ID8sXz.html"
+  },
+  {
+    "id": "36",
+    "title": "Villa in Luxurious Konstancin-Jeziorna",
+    "type": "house",
+    "location": {
+      "city": "Konstancin-Jeziorna",
+      "district": "Jeziorna",
+      "neighborhood": "Chylice"
+    },
+    "price": 3000000,
+    "number_of_rooms": 8,
+    "number_of_bathrooms": 6,
+    "square_footage": 5000,
+    "garden_available": true,
+    "garden_size_sqft": 4000,
+    "description": "Exceptional, stately villa on a large, private plot in the most sought-after part of Konstancin. Features high-end amenities and exquisite design.",
+    "amenities": ["swimming pool", "sauna", "wine cellar", "private cinema", "gated community", "smart home system"],
+    "image_url": "https://placehold.co/600x400/B0E0E6/000000?text=House+36",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-konstancin-jeziorna-chylice-ID0tY0.html"
+  },
+  {
+    "id": "37",
+    "title": "Apartment in Green Żoliborz, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Żoliborz",
+      "neighborhood": "Stary Żoliborz"
+    },
+    "price": 880000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 1000,
+    "garden_available": false,
+    "description": "Elegant apartment in a classic building in one of Warsaw's greenest and most charming districts. Close to parks and cafes.",
+    "amenities": ["high ceilings", "balcony", "historic charm", "near park", "quiet area"],
+    "image_url": "https://placehold.co/600x400/DDA0DD/000000?text=Apartment+37",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-zoliborz-stary-zoliborz-ID2uZ1.html"
+  },
+  {
+    "id": "38",
+    "title": "Modern House in Wilanów, Warsaw - Close to Schools",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wilanów",
+      "neighborhood": "Kępa Zawadowska"
+    },
+    "price": 1700000,
+    "number_of_rooms": 6,
+    "number_of_bathrooms": 3,
+    "square_footage": 2800,
+    "garden_available": true,
+    "garden_size_sqft": 1500,
+    "description": "Contemporary family house in a desirable area, perfect for families with children due to proximity to international schools.",
+    "amenities": ["garage", "terrace", "modern kitchen", "near international schools", "fireplace"],
+    "image_url": "https://placehold.co/600x400/F0F8FF/000000?text=House+38",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-wilanow-kepa-zawadowska-ID4vA2.html"
+  },
+  {
+    "id": "39",
+    "title": "Compact Apartment near Tram Line in Wola, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wola",
+      "neighborhood": "Czyste"
+    },
+    "price": 490000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 500,
+    "garden_available": false,
+    "description": "Functional apartment with excellent public transport links, ideal for commuters. Close to shops and city center.",
+    "amenities": ["good transport", "furnished", "balcony", "storage unit"],
+    "image_url": "https://placehold.co/600x400/BA55D3/000000?text=Apartment+39",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-wola-czyste-ID6wB3.html"
+  },
+  {
+    "id": "40",
+    "title": "Renovated House with Character in Mokotów, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Mokotow",
+      "neighborhood": "Old Mokotów"
+    },
+    "price": 1500000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2600,
+    "garden_available": true,
+    "garden_size_sqft": 1300,
+    "description": "Beautifully renovated house retaining its original charm, situated in the prestigious Old Mokotów. Large, private garden.",
+    "amenities": ["renovated", "historic character", "fireplace", "garage", "large garden", "quiet street"],
+    "image_url": "https://placehold.co/600x400/FFE4E1/000000?text=House+40",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-mokotow-stary-mokotow-ID8xC4.html"
+  },
+  {
+    "id": "41",
+    "title": "Apartment in Green Ochota, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Ochota",
+      "neighborhood": "Rakowiec"
+    },
+    "price": 680000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 1,
+    "square_footage": 800,
+    "garden_available": false,
+    "description": "Bright apartment in a peaceful, green part of Ochota, close to parks and recreational areas. Good access to city center.",
+    "amenities": ["balcony", "near park", "good transport", "storage unit"],
+    "image_url": "https://placehold.co/600x400/ADD8E6/000000?text=Apartment+41",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-ochota-rakowiec-ID0yD5.html"
+  },
+  {
+    "id": "42",
+    "title": "Family House with Garden in Wawer, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wawer",
+      "neighborhood": "Anin"
+    },
+    "price": 1250000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2400,
+    "garden_available": true,
+    "garden_size_sqft": 1100,
+    "description": "Comfortable family house with a well-maintained garden, located in the charming Anin area of Wawer. Close to forest.",
+    "amenities": ["garage", "terrace", "fireplace", "near forest", "quiet neighborhood"],
+    "image_url": "https://placehold.co/600x400/D8BFD8/000000?text=House+42",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-wawer-anin-ID2zE6.html"
+  },
+  {
+    "id": "43",
+    "title": "Investment Apartment in Centrum, Gdansk",
+    "type": "apartment",
+    "location": {
+      "city": "Gdansk",
+      "district": "Śródmieście",
+      "neighborhood": "Główne Miasto"
+    },
+    "price": 600000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 600,
+    "garden_available": false,
+    "description": "Ideal investment property in the heart of Gdańsk, perfect for short-term rentals due to its prime tourist location.",
+    "amenities": ["investment opportunity", "central location", "furnished", "historic building", "high rental yield"],
+    "image_url": "https://placehold.co/600x400/FFFACD/000000?text=Apartment+43",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-gdansk-srodmiescie-glowne-miasto-ID4aF7.html"
+  },
+  {
+    "id": "44",
+    "title": "House with Large Plot in Rembertów, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Rembertów",
+      "neighborhood": "Wesoła"
+    },
+    "price": 1000000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2200,
+    "garden_available": true,
+    "garden_size_sqft": 1800,
+    "description": "Spacious family house with a significant plot, offering plenty of outdoor space. Located in a green and peaceful area.",
+    "amenities": ["large plot", "garage", "terrace", "fireplace", "quiet area"],
+    "image_url": "https://placehold.co/600x400/B0E0E6/000000?text=House+44",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-rembertow-wesola-ID6bG8.html"
+  },
+  {
+    "id": "45",
+    "title": "Modern Apartment in Bemowo, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Bemowo",
+      "neighborhood": "Jelonki Północne"
+    },
+    "price": 580000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 1,
+    "square_footage": 780,
+    "garden_available": false,
+    "description": "Bright and well-designed apartment in a modern building. Close to amenities and public transport.",
+    "amenities": ["balcony", "storage unit", "playground", "security"],
+    "image_url": "https://placehold.co/600x400/DDA0DD/000000?text=Apartment+45",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-bemowo-jelonki-polnocne-ID8cH9.html"
+  },
+  {
+    "id": "46",
+    "title": "Villa with Extensive Garden in Magdalenka",
+    "type": "house",
+    "location": {
+      "city": "Magdalenka",
+      "district": "Centrum",
+      "neighborhood": "Magdalenka"
+    },
+    "price": 2000000,
+    "number_of_rooms": 7,
+    "number_of_bathrooms": 5,
+    "square_footage": 3800,
+    "garden_available": true,
+    "garden_size_sqft": 3500,
+    "description": "Stunning villa surrounded by lush greenery and a very large private garden. Ideal for discerning buyers seeking luxury and privacy.",
+    "amenities": ["swimming pool", "sauna", "multi-car garage", "security system", "large plot", "fireplace"],
+    "image_url": "https://placehold.co/600x400/F0F8FF/000000?text=House+46",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-magdalenka-magdalenka-ID0dI0.html"
+  },
+  {
+    "id": "47",
+    "title": "Apartment with Terrace in Stare Miasto, Krakow",
+    "type": "apartment",
+    "location": {
+      "city": "Krakow",
+      "district": "Stare Miasto",
+      "neighborhood": "Kleparz"
+    },
+    "price": 720000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 900,
+    "garden_available": false,
+    "description": "Elegant apartment with a lovely terrace, located walking distance from Krakow's city center and main attractions.",
+    "amenities": ["terrace", "central location", "furnished", "modern kitchen"],
+    "image_url": "https://placehold.co/600x400/BA55D3/000000?text=Apartment+47",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-krakow-stare-miasto-kleparz-ID2eJ1.html"
+  },
+  {
+    "id": "48",
+    "title": "Family House in Grunwald, Poznan",
+    "type": "house",
+    "location": {
+      "city": "Poznan",
+      "district": "Grunwald",
+      "neighborhood": "Junikowo"
+    },
+    "price": 870000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2100,
+    "garden_available": true,
+    "garden_size_sqft": 1000,
+    "description": "Well-maintained family home with a private garden, situated in a quiet residential area with good access to the city.",
+    "amenities": ["garage", "terrace", "fireplace", "quiet area", "good transport"],
+    "image_url": "https://placehold.co/600x400/FFE4E1/000000?text=House+48",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-poznan-grunwald-junikowo-ID4fK2.html"
+  },
+  {
+    "id": "49",
+    "title": "Apartment in Old Town, Wroclaw",
+    "type": "apartment",
+    "location": {
+      "city": "Wroclaw",
+      "district": "Stare Miasto",
+      "neighborhood": "Ostrów Tumski"
+    },
+    "price": 700000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 700,
+    "garden_available": false,
+    "description": "Charming apartment in the historic Ostrów Tumski, offering unique atmosphere and close proximity to cathedrals and river walks.",
+    "amenities": ["historic building", "river view", "central location", "furnished"],
+    "image_url": "https://placehold.co/600x400/ADD8E6/000000?text=Apartment+49",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-wroclaw-stare-miasto-ostrow-tumski-ID6gL3.html"
+  },
+  {
+    "id": "50",
+    "title": "Modern House with Garden in Gdynia Mały Kack",
+    "type": "house",
+    "location": {
+      "city": "Gdynia",
+      "district": "Mały Kack",
+      "neighborhood": "Mały Kack"
+    },
+    "price": 1000000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 1900,
+    "garden_available": true,
+    "garden_size_sqft": 800,
+    "description": "Contemporary house with a pleasant garden, located in a quiet and green part of Gdynia. Good access to city center.",
+    "amenities": ["garage", "terrace", "modern design", "quiet area"],
+    "image_url": "https://placehold.co/600x400/D8BFD8/000000?text=House+50",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-gdynia-maly-kack-ID8hM4.html"
+  },
+  {
+    "id": "51",
+    "title": "Apartment near University, Gdańsk Wrzeszcz",
+    "type": "apartment",
+    "location": {
+      "city": "Gdańsk",
+      "district": "Wrzeszcz",
+      "neighborhood": "Gdańsk Oliwa"
+    },
+    "price": 550000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 600,
+    "garden_available": false,
+    "description": "Conveniently located apartment, ideal for students or academics due to its proximity to the university campus.",
+    "amenities": ["near university", "good transport", "furnished", "balcony"],
+    "image_url": "https://placehold.co/600x400/FFFACD/000000?text=Apartment+51",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-gdansk-wrzeszcz-oliwa-ID0iN5.html"
+  },
+  {
+    "id": "52",
+    "title": "House with Large Garden in Falenica, Wawer",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wawer",
+      "neighborhood": "Falenica"
+    },
+    "price": 950000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2000,
+    "garden_available": true,
+    "garden_size_sqft": 1600,
+    "description": "Traditional family house with a generous garden in the green and peaceful Falenica. Perfect for quiet living.",
+    "amenities": ["large garden", "fireplace", "garage", "terrace", "quiet area"],
+    "image_url": "https://placehold.co/600x400/B0E0E6/000000?text=House+52",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-wawer-falenica-ID2jO6.html"
+  },
+  {
+    "id": "53",
+    "title": "Apartment in Modern Building, Mokotów, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Mokotow",
+      "neighborhood": "Dolny Mokotów"
+    },
+    "price": 700000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 850,
+    "garden_available": false,
+    "description": "Comfortable apartment in a modern building with a good location, close to city amenities and transport links.",
+    "amenities": ["balcony", "underground parking", "security", "modern kitchen"],
+    "image_url": "https://placehold.co/600x400/DDA0DD/000000?text=Apartment+53",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-mokotow-dolny-mokotow-ID4kP7.html"
+  },
+  {
+    "id": "54",
+    "title": "House with Character in Otwock, Świder",
+    "type": "house",
+    "location": {
+      "city": "Otwock",
+      "district": "Świder",
+      "neighborhood": "Anielin"
+    },
+    "price": 1100000,
+    "number_of_rooms": 6,
+    "number_of_bathrooms": 3,
+    "square_footage": 2500,
+    "garden_available": true,
+    "garden_size_sqft": 1500,
+    "description": "Unique house with architectural character, surrounded by greenery and a large garden. Ideal for peaceful family life.",
+    "amenities": ["fireplace", "large garden", "terrace", "garage", "unique design"],
+    "image_url": "https://placehold.co/600x400/F0F8FF/000000?text=House+54",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-otwock-swider-anielin-ID6lQ8.html"
+  },
+  {
+    "id": "55",
+    "title": "Studio Apartment in City Center, Poznan",
+    "type": "apartment",
+    "location": {
+      "city": "Poznan",
+      "district": "Stare Miasto",
+      "neighborhood": "Jeżyce"
+    },
+    "price": 380000,
+    "number_of_rooms": 1,
+    "number_of_bathrooms": 1,
+    "square_footage": 380,
+    "garden_available": false,
+    "description": "Compact studio apartment in a lively district, perfect for a single person or as a rental investment. Close to market and restaurants.",
+    "amenities": ["furnished", "central location", "good transport", "near amenities"],
+    "image_url": "https://placehold.co/600x400/BA55D3/000000?text=Apartment+55",
+    "listing_url": "https://www.otodom.pl/pl/oferta/kawalerka-poznan-stare-miasto-jezyce-ID8mR9.html"
+  },
+  {
+    "id": "56",
+    "title": "New Build House in Konstancin-Jeziorna",
+    "type": "house",
+    "location": {
+      "city": "Konstancin-Jeziorna",
+      "district": "Centrum",
+      "neighborhood": "Klarysew"
+    },
+    "price": 1900000,
+    "number_of_rooms": 6,
+    "number_of_bathrooms": 4,
+    "square_footage": 3200,
+    "garden_available": true,
+    "garden_size_sqft": 2000,
+    "description": "Newly built, modern house in the exclusive Konstancin-Jeziorna. Ready for custom interior finishing. Large private garden.",
+    "amenities": ["newly built", "garage", "terrace", "large garden", "luxury location"],
+    "image_url": "https://placehold.co/600x400/FFE4E1/000000?text=House+56",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-konstancin-jeziorna-klarysew-ID0nS0.html"
+  },
+  {
+    "id": "57",
+    "title": "Apartment in Ochota, Warsaw with Green View",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Ochota",
+      "neighborhood": "Szczęśliwice"
     },
     "price": 650000,
     "number_of_rooms": 3,
     "number_of_bathrooms": 1,
-    "square_footage": 900,
-    "garden_available": true,
-    "garden_size_sqft": 500,
-    "description": "Charming wooden cottage close to the forest and hiking trails. Ideal for a holiday home or rental investment.",
-    "amenities": ["fireplace", "garden", "mountain view"],
-    "image_url": "https://placehold.co/600x400/8B4513/FFFFFF?text=Cottage+4",
-    "listing_url": "https://www.otodom.pl/pl/oferta/cottage-zakopane-krupowki-ID4k9C.html"
+    "square_footage": 750,
+    "garden_available": false,
+    "description": "Bright apartment overlooking green parkland, offering a peaceful living environment while still being well-connected.",
+    "amenities": ["park view", "balcony", "storage unit", "playground"],
+    "image_url": "https://placehold.co/600x400/ADD8E6/000000?text=Apartment+57",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-ochota-szczesliwice-ID2oT1.html"
   },
   {
-    "id": "5",
-    "title": "Modern Loft in Gdansk Old Town",
+    "id": "58",
+    "title": "Semi-Detached House in Białołęka, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Białołęka",
+      "neighborhood": "Nowodwory"
+    },
+    "price": 820000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 1800,
+    "garden_available": true,
+    "garden_size_sqft": 700,
+    "description": "Comfortable semi-detached house with a manageable garden, located in a developing residential area. Good for families.",
+    "amenities": ["garage", "terrace", "quiet neighborhood", "storage room"],
+    "image_url": "https://placehold.co/600x400/D8BFD8/000000?text=House+58",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-bialoleka-nowodwory-ID4pU2.html"
+  },
+  {
+    "id": "59",
+    "title": "Apartment in Old Town, Krakow - High Ceilings",
+    "type": "apartment",
+    "location": {
+      "city": "Krakow",
+      "district": "Stare Miasto",
+      "neighborhood": "Stradom"
+    },
+    "price": 780000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 950,
+    "garden_available": false,
+    "description": "Spacious apartment with high ceilings in a historic building, located between Old Town and Kazimierz. Full of character.",
+    "amenities": ["historic building", "high ceilings", "central location", "furnished", "balcony"],
+    "image_url": "https://placehold.co/600x400/FFFACD/000000?text=Apartment+59",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-krakow-stare-miasto-stradom-ID6qV3.html"
+  },
+  {
+    "id": "60",
+    "title": "House near Nature Reserve in Bielany, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Bielany",
+      "neighborhood": "Młociny"
+    },
+    "price": 1400000,
+    "number_of_rooms": 6,
+    "number_of_bathrooms": 4,
+    "square_footage": 3000,
+    "garden_available": true,
+    "garden_size_sqft": 2000,
+    "description": "Elegant house located near a large nature reserve, offering peace and direct access to green areas. Large private garden.",
+    "amenities": ["near nature reserve", "fireplace", "double garage", "terrace", "secluded location"],
+    "image_url": "https://placehold.co/600x400/B0E0E6/000000?text=House+60",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-bielany-mlociny-ID8rW4.html"
+  },
+  {
+    "id": "61",
+    "title": "Apartment with View, Śródmieście, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Śródmieście",
+      "neighborhood": "Solec"
+    },
+    "price": 950000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 1050,
+    "garden_available": false,
+    "description": "Modern apartment with a picturesque view, located in a desirable part of Śródmieście, close to the river and amenities.",
+    "amenities": ["city view", "balcony", "underground parking", "modern kitchen", "concierge service"],
+    "image_url": "https://placehold.co/600x400/DDA0DD/000000?text=Apartment+61",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-srodmiescie-solec-ID0sX5.html"
+  },
+  {
+    "id": "62",
+    "title": "Family House with Garden in Wawer, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wawer",
+      "neighborhood": "Marysin Wawerski"
+    },
+    "price": 1150000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2300,
+    "garden_available": true,
+    "garden_size_sqft": 1000,
+    "description": "Well-maintained family home with a private garden in a quiet, residential part of Wawer. Good access to city.",
+    "amenities": ["garage", "terrace", "fireplace", "quiet area", "good transport"],
+    "image_url": "https://placehold.co/600x400/F0F8FF/000000?text=House+62",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-wawer-marysin-wawerski-ID2tY6.html"
+  },
+  {
+    "id": "63",
+    "title": "Apartment in Krowodrza, Krakow - Near AGH",
+    "type": "apartment",
+    "location": {
+      "city": "Krakow",
+      "district": "Krowodrza",
+      "neighborhood": "Cichy Kącik"
+    },
+    "price": 580000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 650,
+    "garden_available": false,
+    "description": "Functional apartment ideal for students or young professionals, located very close to AGH University of Science and Technology.",
+    "amenities": ["near university", "good transport", "furnished", "balcony"],
+    "image_url": "https://placehold.co/600x400/BA55D3/000000?text=Apartment+63",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-krakow-krowodrza-cichy-kacik-ID4uZ7.html"
+  },
+  {
+    "id": "64",
+    "title": "Townhouse in Bemowo, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Bemowo",
+      "neighborhood": "Górce"
+    },
+    "price": 850000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 1700,
+    "garden_available": true,
+    "garden_size_sqft": 600,
+    "description": "Compact townhouse with a small private garden, located in a quiet and green part of Bemowo. Ideal for a small family.",
+    "amenities": ["garage", "terrace", "modern design", "quiet area", "playground"],
+    "image_url": "https://placehold.co/600x400/FFE4E1/000000?text=House+64",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-bemowo-gorce-ID6vA8.html"
+  },
+  {
+    "id": "65",
+    "title": "Apartment in Old Town, Gdansk with Balcony",
     "type": "apartment",
     "location": {
       "city": "Gdansk",
-      "district": "Srodmiescie",
-      "neighborhood": "Old Town"
+      "district": "Śródmieście",
+      "neighborhood": "Stare Miasto"
     },
-    "price": 990000,
+    "price": 750000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 1,
+    "square_footage": 800,
+    "garden_available": false,
+    "description": "Spacious apartment with a charming balcony, situated in the historic Old Town of Gdańsk. Close to all major attractions.",
+    "amenities": ["balcony", "historic building", "central location", "furnished", "city view"],
+    "image_url": "https://placehold.co/600x400/ADD8E6/000000?text=Apartment+65",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-gdansk-srodmiescie-stare-miasto-ID8wB9.html"
+  },
+  {
+    "id": "66",
+    "title": "Detached House with Big Garden in Wilanów, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wilanów",
+      "neighborhood": "Błonia Wilanowskie"
+    },
+    "price": 1900000,
+    "number_of_rooms": 6,
+    "number_of_bathrooms": 4,
+    "square_footage": 3500,
+    "garden_available": true,
+    "garden_size_sqft": 2500,
+    "description": "Expansive detached house with a very large, well-maintained garden, located in a tranquil and desirable part of Wilanów.",
+    "amenities": ["double garage", "fireplace", "sauna", "large garden", "security system"],
+    "image_url": "https://placehold.co/600x400/D8BFD8/000000?text=House+66",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-wilanow-blonia-wilanowskie-ID0xC0.html"
+  },
+  {
+    "id": "67",
+    "title": "Apartment in Ursynów, Warsaw - Near Metro",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Ursynów",
+      "neighborhood": "Kabaty"
+    },
+    "price": 780000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 900,
+    "garden_available": false,
+    "description": "Comfortable apartment with excellent metro access, ideal for quick commutes to the city center. Close to Kabaty Forest.",
+    "amenities": ["near metro", "balcony", "underground parking", "storage unit", "near forest"],
+    "image_url": "https://placehold.co/600x400/FFFACD/000000?text=Apartment+67",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-ursynow-kabaty-ID2yD1.html"
+  },
+  {
+    "id": "68",
+    "title": "House with Attic and Basement in Legionowo",
+    "type": "house",
+    "location": {
+      "city": "Legionowo",
+      "district": "Centrum",
+      "neighborhood": "Piaski"
+    },
+    "price": 900000,
+    "number_of_rooms": 6,
+    "number_of_bathrooms": 3,
+    "square_footage": 2600,
+    "garden_available": true,
+    "garden_size_sqft": 1200,
+    "description": "Spacious house with a usable attic and a large basement, providing ample storage and living space. Quiet residential area.",
+    "amenities": ["attic", "basement", "garage", "terrace", "fireplace", "quiet neighborhood"],
+    "image_url": "https://placehold.co/600x400/B0E0E6/000000?text=House+68",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-legionowo-piaski-ID4zE2.html"
+  },
+  {
+    "id": "69",
+    "title": "Apartment near Old Town, Poznan",
+    "type": "apartment",
+    "location": {
+      "city": "Poznan",
+      "district": "Stare Miasto",
+      "neighborhood": "Chwaliszewo"
+    },
+    "price": 520000,
     "number_of_rooms": 2,
     "number_of_bathrooms": 1,
-    "square_footage": 950,
+    "square_footage": 620,
     "garden_available": false,
-    "description": "Stylish loft apartment in a renovated historic building, featuring exposed brick, high ceilings, and modern amenities. Walk to the river and main attractions.",
-    "amenities": ["historic building", "high ceilings", "modern kitchen", "city center"],
-    "image_url": "https://placehold.co/600x400/4682B4/FFFFFF?text=Loft+5",
-    "listing_url": "https://www.otodom.pl/pl/oferta/loft-gdansk-oldtown-ID4k9D.html"
+    "description": "Cozy apartment within walking distance to Poznan's Old Town, perfect for those who enjoy city life and historic surroundings.",
+    "amenities": ["central location", "furnished", "good transport", "near river"],
+    "image_url": "https://placehold.co/600x400/DDA0DD/000000?text=Apartment+69",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-poznan-stare-miasto-chwaliszewo-ID6aF3.html"
+  },
+  {
+    "id": "70",
+    "title": "Modern House in Wilanów, Warsaw - Near Park",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wilanów",
+      "neighborhood": "Powsin"
+    },
+    "price": 1600000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2700,
+    "garden_available": true,
+    "garden_size_sqft": 1400,
+    "description": "Stylish family house with a pleasant garden, located near the picturesque Botanical Garden in Powsin. Excellent for nature lovers.",
+    "amenities": ["near park", "garage", "terrace", "fireplace", "modern kitchen", "quiet area"],
+    "image_url": "https://placehold.co/600x400/F0F8FF/000000?text=House+70",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-wilanow-powsin-ID8bG4.html"
+  },
+  {
+    "id": "71",
+    "title": "Apartment in Praga-Południe, Warsaw - Near Metro",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Praga-Południe",
+      "neighborhood": "Grochów"
+    },
+    "price": 620000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 1,
+    "square_footage": 720,
+    "garden_available": false,
+    "description": "Functional apartment with good metro access, simplifying commutes to the city center. Close to local shops and services.",
+    "amenities": ["near metro", "balcony", "storage unit", "good transport"],
+    "image_url": "https://placehold.co/600x400/BA55D3/000000?text=Apartment+71",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-praga-poludnie-grochow-ID0cH5.html"
+  },
+  {
+    "id": "72",
+    "title": "Detached House with Large Plot in Lesznowola",
+    "type": "house",
+    "location": {
+      "city": "Lesznowola",
+      "district": "Centrum",
+      "neighborhood": "Nowa Wola"
+    },
+    "price": 1050000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2300,
+    "garden_available": true,
+    "garden_size_sqft": 2000,
+    "description": "Spacious detached house on a large plot, offering quiet suburban living with good access to Warsaw.",
+    "amenities": ["large plot", "garage", "terrace", "fireplace", "quiet area"],
+    "image_url": "https://placehold.co/600x400/FFE4E1/000000?text=House+72",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-lesznowola-nowa-wola-ID2dI6.html"
+  },
+  {
+    "id": "73",
+    "title": "Renovated Apartment in Śródmieście, Wroclaw",
+    "type": "apartment",
+    "location": {
+      "city": "Wroclaw",
+      "district": "Śródmieście",
+      "neighborhood": "Nadodrze"
+    },
+    "price": 650000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 700,
+    "garden_available": false,
+    "description": "Beautifully renovated apartment in a vibrant and developing district, combining historic charm with modern style.",
+    "amenities": ["renovated", "high ceilings", "central location", "good transport", "balcony"],
+    "image_url": "https://placehold.co/600x400/ADD8E6/000000?text=Apartment+73",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-wroclaw-srodmiescie-nadodrze-ID4eJ7.html"
+  },
+  {
+    "id": "74",
+    "title": "Family House with Garden in Gdynia Chwarzno",
+    "type": "house",
+    "location": {
+      "city": "Gdynia",
+      "district": "Chwarzno-Wiczlino",
+      "neighborhood": "Chwarzno"
+    },
+    "price": 900000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 1850,
+    "garden_available": true,
+    "garden_size_sqft": 900,
+    "description": "Comfortable family house with a pleasant garden, located in a quiet and green part of Gdynia, close to forest.",
+    "amenities": ["garage", "terrace", "quiet area", "near forest"],
+    "image_url": "https://placehold.co/600x400/D8BFD8/000000?text=House+74",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-gdynia-chwarzno-wiczlino-chwarzno-ID6fK8.html"
+  },
+  {
+    "id": "75",
+    "title": "Apartment near Beach, Gdańsk Przymorze",
+    "type": "apartment",
+    "location": {
+      "city": "Gdańsk",
+      "district": "Przymorze Wielkie",
+      "neighborhood": "Jelitkowo"
+    },
+    "price": 680000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 800,
+    "garden_available": false,
+    "description": "Bright apartment within walking distance to the beach, perfect for sea lovers. Close to parks and recreational areas.",
+    "amenities": ["near beach", "balcony", "sea view (partial)", "good transport"],
+    "image_url": "https://placehold.co/600x400/FFFACD/000000?text=Apartment+75",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-gdansk-przymorze-wielkie-jelitkowo-ID8gL9.html"
+  },
+  {
+    "id": "76",
+    "title": "Luxury Villa in Konstancin-Jeziorna - Modern Design",
+    "type": "house",
+    "location": {
+      "city": "Konstancin-Jeziorna",
+      "district": "Jeziorna",
+      "neighborhood": "Skolimów"
+    },
+    "price": 2800000,
+    "number_of_rooms": 7,
+    "number_of_bathrooms": 5,
+    "square_footage": 4500,
+    "garden_available": true,
+    "garden_size_sqft": 3000,
+    "description": "Exquisite modern villa with a minimalist design and a beautiful landscaped garden. Located in a prestigious spa town.",
+    "amenities": ["swimming pool", "sauna", "smart home system", "multi-car garage", "gated community", "large plot"],
+    "image_url": "https://placehold.co/600x400/B0E0E6/000000?text=House+76",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-konstancin-jeziorna-skolimow-ID0hM0.html"
+  },
+  {
+    "id": "77",
+    "title": "Apartment in Green Ursynów, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Ursynów",
+      "neighborhood": "Grabów"
+    },
+    "price": 600000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 680,
+    "garden_available": false,
+    "description": "Bright apartment in a peaceful, green part of Ursynów, ideal for those seeking tranquility near city conveniences.",
+    "amenities": ["balcony", "near park", "storage unit", "playground"],
+    "image_url": "https://placehold.co/600x400/DDA0DD/000000?text=Apartment+77",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-ursynow-grabow-ID2iN1.html"
+  },
+  {
+    "id": "78",
+    "title": "Family House with Garden in Wawer, Warsaw - Las",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wawer",
+      "neighborhood": "Międzylesie"
+    },
+    "price": 1300000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2500,
+    "garden_available": true,
+    "garden_size_sqft": 1300,
+    "description": "Spacious family house with a large garden, situated in the green and peaceful Międzylesie. Direct access to forest.",
+    "amenities": ["near forest", "fireplace", "garage", "terrace", "quiet area"],
+    "image_url": "https://placehold.co/600x400/F0F8FF/000000?text=House+78",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-wawer-miedzylesie-ID4jO2.html"
+  },
+  {
+    "id": "79",
+    "title": "Investment Studio, Śródmieście, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Śródmieście",
+      "neighborhood": "Murano"
+    },
+    "price": 450000,
+    "number_of_rooms": 1,
+    "number_of_bathrooms": 1,
+    "square_footage": 400,
+    "garden_available": false,
+    "description": "Perfect investment studio in a prime location, close to city attractions and business centers. High rental potential.",
+    "amenities": ["investment opportunity", "furnished", "central location", "good transport"],
+    "image_url": "https://placehold.co/600x400/BA55D3/000000?text=Apartment+79",
+    "listing_url": "https://www.otodom.pl/pl/oferta/kawalerka-warszawa-srodmiescie-murano-ID6kP3.html"
+  },
+  {
+    "id": "80",
+    "title": "House with Large Plot in Płochocin, Ożarów Mazowiecki",
+    "type": "house",
+    "location": {
+      "city": "Ożarów Mazowiecki",
+      "district": "Płochocin",
+      "neighborhood": "Płochocin"
+    },
+    "price": 950000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 2,
+    "square_footage": 2100,
+    "garden_available": true,
+    "garden_size_sqft": 2500,
+    "description": "Spacious house on a large, private plot, ideal for those seeking rural peace with easy access to Warsaw.",
+    "amenities": ["large plot", "garage", "terrace", "fireplace", "quiet area"],
+    "image_url": "https://placehold.co/600x400/FFE4E1/000000?text=House+80",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-ozarow-mazowiecki-plochocin-ID8lQ4.html"
+  },
+  {
+    "id": "81",
+    "title": "Apartment with City View in Śródmieście, Wroclaw",
+    "type": "apartment",
+    "location": {
+      "city": "Wroclaw",
+      "district": "Śródmieście",
+      "neighborhood": "Ołbin"
+    },
+    "price": 700000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 850,
+    "garden_available": false,
+    "description": "Bright apartment offering city views, located in a well-connected part of Wroclaw. Close to universities and city center.",
+    "amenities": ["city view", "balcony", "good transport", "modern kitchen"],
+    "image_url": "https://placehold.co/600x400/ADD8E6/000000?text=Apartment+81",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-wroclaw-srodmiescie-olbin-ID0mR5.html"
+  },
+  {
+    "id": "82",
+    "title": "Family House in Gdynia Witomino",
+    "type": "house",
+    "location": {
+      "city": "Gdynia",
+      "district": "Witomino",
+      "neighborhood": "Witomino Leśne"
+    },
+    "price": 820000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 1700,
+    "garden_available": true,
+    "garden_size_sqft": 800,
+    "description": "Comfortable family house with a private garden, located in a peaceful and green part of Gdynia.",
+    "amenities": ["garage", "terrace", "quiet area", "near forest"],
+    "image_url": "https://placehold.co/600x400/D8BFD8/000000?text=House+82",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-gdynia-witomino-lesne-ID2nS6.html"
+  },
+  {
+    "id": "83",
+    "title": "Apartment with Sea View, Gdańsk Brzeźno",
+    "type": "apartment",
+    "location": {
+      "city": "Gdańsk",
+      "district": "Brzeźno",
+      "neighborhood": "Brzeźno"
+    },
+    "price": 720000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 650,
+    "garden_available": false,
+    "description": "Charming apartment with direct sea views, just steps from the beach and pier. Ideal for relaxation or rental.",
+    "amenities": ["sea view", "near beach", "balcony", "furnished"],
+    "image_url": "https://placehold.co/600x400/FFFACD/000000?text=Apartment+83",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-gdansk-brzezno-ID4oT7.html"
+  },
+  {
+    "id": "84",
+    "title": "Detached House with Big Garden in Komorów",
+    "type": "house",
+    "location": {
+      "city": "Komorów",
+      "district": "Centrum",
+      "neighborhood": "Komorów"
+    },
+    "price": 1500000,
+    "number_of_rooms": 6,
+    "number_of_bathrooms": 4,
+    "square_footage": 2800,
+    "garden_available": true,
+    "garden_size_sqft": 2000,
+    "description": "Spacious detached house on a large, beautifully landscaped plot, offering privacy and tranquil living close to nature.",
+    "amenities": ["large garden", "fireplace", "double garage", "terrace", "security system"],
+    "image_url": "https://placehold.co/600x400/B0E0E6/000000?text=House+84",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-komorow-ID6pU8.html"
+  },
+  {
+    "id": "85",
+    "title": "Apartment in Green Wola, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wola",
+      "neighborhood": "Ulrychów"
+    },
+    "price": 550000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 650,
+    "garden_available": false,
+    "description": "Bright apartment in a developing green area, offering good value and excellent transport links to the city center.",
+    "amenities": ["balcony", "near park", "good transport", "storage unit"],
+    "image_url": "https://placehold.co/600x400/DDA0DD/000000?text=Apartment+85",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-wola-ulrychow-ID8qV9.html"
+  },
+  {
+    "id": "86",
+    "title": "Modern Townhouse in Wesoła, Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wesoła",
+      "neighborhood": "Wesoła"
+    },
+    "price": 980000,
+    "number_of_rooms": 4,
+    "number_of_bathrooms": 2,
+    "square_footage": 1900,
+    "garden_available": true,
+    "garden_size_sqft": 700,
+    "description": "Contemporary townhouse with a small private garden, located in the peaceful and green Wesoła district.",
+    "amenities": ["garage", "terrace", "modern design", "quiet area", "near forest"],
+    "image_url": "https://placehold.co/600x400/F0F8FF/000000?text=House+86",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-wesola-ID0rW0.html"
+  },
+  {
+    "id": "87",
+    "title": "Apartment in Old Town, Krakow - Investment",
+    "type": "apartment",
+    "location": {
+      "city": "Krakow",
+      "district": "Stare Miasto",
+      "neighborhood": "Wawel"
+    },
+    "price": 850000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 750,
+    "garden_available": false,
+    "description": "Prime investment apartment in the historic heart of Krakow, offering high rental potential due to its proximity to Wawel Castle and city center.",
+    "amenities": ["investment opportunity", "central location", "historic building", "furnished", "city view"],
+    "image_url": "https://placehold.co/600x400/BA55D3/000000?text=Apartment+87",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-krakow-stare-miasto-wawel-ID2sX1.html"
+  },
+  {
+    "id": "88",
+    "title": "Family House in Fabryczna, Wroclaw",
+    "type": "house",
+    "location": {
+      "city": "Wroclaw",
+      "district": "Fabryczna",
+      "neighborhood": "Muchobór Wielki"
+    },
+    "price": 920000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2000,
+    "garden_available": true,
+    "garden_size_sqft": 1000,
+    "description": "Spacious family home with a moderate-sized garden, situated in a quiet residential area with good transport links.",
+    "amenities": ["garage", "terrace", "fireplace", "quiet area", "good transport"],
+    "image_url": "https://placehold.co/600x400/FFE4E1/000000?text=House+88",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-wroclaw-fabryczna-muchobor-wielki-ID4tY2.html"
+  },
+  {
+    "id": "89",
+    "title": "Apartment in Saska Kępa, Praga-Południe, Warsaw",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Praga-Południe",
+      "neighborhood": "Saska Kępa"
+    },
+    "price": 800000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 900,
+    "garden_available": false,
+    "description": "Charming apartment in the highly desirable Saska Kępa, known for its unique atmosphere, cafes, and green spaces.",
+    "amenities": ["balcony", "unique neighborhood", "near Vistula", "good restaurants"],
+    "image_url": "https://placehold.co/600x400/ADD8E6/000000?text=Apartment+89",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-praga-poludnie-saska-kepa-ID6uX3.html"
+  },
+  {
+    "id": "90",
+    "title": "House with Pool in Józefów, Michalin",
+    "type": "house",
+    "location": {
+      "city": "Józefów",
+      "district": "Centrum",
+      "neighborhood": "Michalin"
+    },
+    "price": 2200000,
+    "number_of_rooms": 7,
+    "number_of_bathrooms": 5,
+    "square_footage": 4000,
+    "garden_available": true,
+    "garden_size_sqft": 3000,
+    "description": "Luxurious house with a private swimming pool and expansive garden, located in the exclusive Józefów. Perfect for luxury living.",
+    "amenities": ["swimming pool", "sauna", "multi-car garage", "security system", "large plot"],
+    "image_url": "https://placehold.co/600x400/D8BFD8/000000?text=House+90",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-jozefow-michalin-ID8vY4.html"
+  },
+  {
+    "id": "91",
+    "title": "Apartment in Mokotów, Warsaw - Green surroundings",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Mokotow",
+      "neighborhood": "Sielce"
+    },
+    "price": 750000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 900,
+    "garden_available": false,
+    "description": "Comfortable apartment in a green and quiet part of Mokotów, close to parks and recreational areas. Good access to city.",
+    "amenities": ["balcony", "near park", "underground parking", "security"],
+    "image_url": "https://placehold.co/600x400/FFFACD/000000?text=Apartment+91",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-mokotow-sielce-ID0wZ5.html"
+  },
+  {
+    "id": "92",
+    "title": "Modern House near Lake, Zalesie Górne",
+    "type": "house",
+    "location": {
+      "city": "Piaseczno",
+      "district": "Zalesie Górne",
+      "neighborhood": "Zalesie"
+    },
+    "price": 1200000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2300,
+    "garden_available": true,
+    "garden_size_sqft": 1000,
+    "description": "Contemporary house with a beautiful garden, situated near a picturesque lake, perfect for nature enthusiasts.",
+    "amenities": ["near lake", "terrace", "garage", "modern design", "fireplace"],
+    "image_url": "https://placehold.co/600x400/B0E0E6/000000?text=House+92",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-piaseczno-zalesie-gorne-ID2xA6.html"
+  },
+  {
+    "id": "93",
+    "title": "Apartment in Żoliborz, Warsaw - Near Metro",
+    "type": "apartment",
+    "location": {
+      "city": "Warsaw",
+      "district": "Żoliborz",
+      "neighborhood": "Sady Żoliborskie"
+    },
+    "price": 700000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 1,
+    "square_footage": 800,
+    "garden_available": false,
+    "description": "Bright apartment in a charming and green part of Żoliborz, with excellent metro access for convenient city commutes.",
+    "amenities": ["near metro", "balcony", "storage unit", "near park"],
+    "image_url": "https://placehold.co/600x400/DDA0DD/000000?text=Apartment+93",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-warszawa-zoliborz-sady-zoliborskie-ID4yB7.html"
+  },
+  {
+    "id": "94",
+    "title": "Family House in Pruszków, Near Warsaw",
+    "type": "house",
+    "location": {
+      "city": "Pruszków",
+      "district": "Centrum",
+      "neighborhood": "Gąsin"
+    },
+    "price": 880000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2000,
+    "garden_available": true,
+    "garden_size_sqft": 900,
+    "description": "Comfortable family house with a private garden, located in a quiet suburb with good access to Warsaw by train.",
+    "amenities": ["garage", "terrace", "quiet area", "good train access"],
+    "image_url": "https://placehold.co/600x400/F0F8FF/000000?text=House+94",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-pruszkow-gasin-ID6zC8.html"
+  },
+  {
+    "id": "95",
+    "title": "Apartment in Grunwald, Poznan - Near Park",
+    "type": "apartment",
+    "location": {
+      "city": "Poznan",
+      "district": "Grunwald",
+      "neighborhood": "Marcelin"
+    },
+    "price": 580000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 1,
+    "square_footage": 700,
+    "garden_available": false,
+    "description": "Bright apartment situated near large green areas, offering a peaceful environment. Good public transport access.",
+    "amenities": ["near park", "balcony", "storage unit", "good transport"],
+    "image_url": "https://placehold.co/600x400/BA55D3/000000?text=Apartment+95",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-poznan-grunwald-marcelin-ID8aD9.html"
+  },
+  {
+    "id": "96",
+    "title": "Luxury Villa in Konstancin-Jeziorna - Traditional Style",
+    "type": "house",
+    "location": {
+      "city": "Konstancin-Jeziorna",
+      "district": "Jeziorna",
+      "neighborhood": "Jeziorna"
+    },
+    "price": 2700000,
+    "number_of_rooms": 8,
+    "number_of_bathrooms": 6,
+    "square_footage": 4800,
+    "garden_available": true,
+    "garden_size_sqft": 3500,
+    "description": "Stately traditional-style villa on an extensive plot in the heart of Konstancin. Exquisite finishes and luxurious amenities.",
+    "amenities": ["swimming pool", "sauna", "wine cellar", "private cinema", "gated community", "large plot", "fireplace"],
+    "image_url": "https://placehold.co/600x400/FFE4E1/000000?text=House+96",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-konstancin-jeziorna-jeziorna-ID0bE0.html"
+  },
+  {
+    "id": "97",
+    "title": "Apartment with River View, Śródmieście, Krakow",
+    "type": "apartment",
+    "location": {
+      "city": "Krakow",
+      "district": "Stare Miasto",
+      "neighborhood": "Dębniki"
+    },
+    "price": 700000,
+    "number_of_rooms": 2,
+    "number_of_bathrooms": 1,
+    "square_footage": 700,
+    "garden_available": false,
+    "description": "Cozy apartment with picturesque views of the Vistula River, located in a quiet part of the city center.",
+    "amenities": ["river view", "balcony", "furnished", "central location"],
+    "image_url": "https://placehold.co/600x400/ADD8E6/000000?text=Apartment+97",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-krakow-stare-miasto-debniki-ID2cF1.html"
+  },
+  {
+    "id": "98",
+    "title": "Family House in Psie Pole, Wroclaw - Near Park",
+    "type": "house",
+    "location": {
+      "city": "Wroclaw",
+      "district": "Psie Pole",
+      "neighborhood": "Kowale"
+    },
+    "price": 950000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2100,
+    "garden_available": true,
+    "garden_size_sqft": 1200,
+    "description": "Spacious family home with a well-maintained garden, located in a green and quiet residential area of Wroclaw, close to a large park.",
+    "amenities": ["near park", "garage", "fireplace", "terrace", "quiet street"],
+    "image_url": "https://placehold.co/600x400/D8BFD8/000000?text=House+98",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-wroclaw-psie-pole-kowale-ID4dG2.html"
+  },
+  {
+    "id": "99",
+    "title": "Apartment in Centrum, Gdansk - View of Crane",
+    "type": "apartment",
+    "location": {
+      "city": "Gdansk",
+      "district": "Śródmieście",
+      "neighborhood": "Długi Targ"
+    },
+    "price": 800000,
+    "number_of_rooms": 3,
+    "number_of_bathrooms": 2,
+    "square_footage": 900,
+    "garden_available": false,
+    "description": "Elegant apartment with direct views of the historic Gdańsk Crane, situated on the iconic Długi Targ. Fully furnished and modern.",
+    "amenities": ["historic view", "central location", "furnished", "balcony", "high ceilings"],
+    "image_url": "https://placehold.co/600x400/FFFACD/000000?text=Apartment+99",
+    "listing_url": "https://www.otodom.pl/pl/oferta/mieszkanie-gdansk-srodmiescie-dlugi-targ-ID6eH3.html"
+  },
+  {
+    "id": "100",
+    "title": "Spacious Family House with Large Garden in Falenica, Wawer",
+    "type": "house",
+    "location": {
+      "city": "Warsaw",
+      "district": "Wawer",
+      "neighborhood": "Falenica"
+    },
+    "price": 1000000,
+    "number_of_rooms": 5,
+    "number_of_bathrooms": 3,
+    "square_footage": 2200,
+    "garden_available": true,
+    "garden_size_sqft": 1800,
+    "description": "Classic family house with a very large garden, offering a peaceful and green living environment. Ideal for outdoor enthusiasts.",
+    "amenities": ["large garden", "fireplace", "garage", "terrace", "quiet area", "near forest"],
+    "image_url": "https://placehold.co/600x400/B0E0E6/000000?text=House+100",
+    "listing_url": "https://www.otodom.pl/pl/oferta/dom-warszawa-wawer-falenica-ID8fI4.html"
   }
 ]

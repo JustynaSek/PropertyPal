@@ -22,6 +22,7 @@ const Chat: React.FC = () => {
   const [emailDraft, setEmailDraft] = useState<string | null>(null);
   const [awaitingApproval, setAwaitingApproval] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   // Hybrid email editing states
   const [isEditingDraft, setIsEditingDraft] = useState(false); // manual edit mode
@@ -33,6 +34,10 @@ const Chat: React.FC = () => {
   useEffect(() => {
     console.log('[DEBUG] loading state:', loading, 'input:', input, 'button disabled:', loading || !input.trim());
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    // Focus input if the last message is from assistant
+    if (messages.length > 0 && messages[messages.length - 1].role === 'assistant') {
+      inputRef.current?.focus();
+    }
   }, [messages]);
 
   function extractOffersFromLastAssistantMessage(): any[] {
@@ -163,16 +168,20 @@ const Chat: React.FC = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto min-h-screen flex flex-col rounded-2xl shadow-xl bg-white font-inter w-full p-4 gap-6">
-      <h2 className="text-center mb-4 font-extrabold text-3xl text-gray-900">💬 PropertyPal Chat</h2>
+    <div className="max-w-3xl mx-auto min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-blue-50 w-full p-0 sm:p-6 gap-6" style={{ fontFamily: 'Inter, Segoe UI, Helvetica Neue, Arial, Liberation Sans, sans-serif', fontWeight: 300 }}>
+      <header className="sticky top-0 z-10 bg-white/80 backdrop-blur border-b border-gray-200 py-4 px-4 sm:rounded-t-2xl shadow-sm flex items-center justify-between">
+        <h2 className="font-extrabold text-2xl sm:text-3xl text-gray-900 flex items-center gap-2 font-serif" style={{ fontFamily: 'Merriweather, Georgia, Times New Roman, serif' }}>
+          <span role="img" aria-label="Chat">💬</span> PropertyPal Chat
+        </h2>
+      </header>
       {/* Chat Section: takes most of the viewport height, always scrollable, input at the bottom of this section */}
-      <section className="h-[70vh] flex flex-col bg-gray-50 rounded-lg p-4 mb-2 border border-gray-200 shadow">
-        <div className="flex-1 overflow-y-auto">
-          {messages.length === 0 && <div className="text-gray-500 text-center py-4">Ask me about properties!</div>}
+      <section className="flex-1 flex flex-col bg-white rounded-2xl p-0 sm:p-6 mb-2 border border-gray-100 shadow-md overflow-hidden">
+        <div className="flex-1 overflow-y-auto px-2 sm:px-0 py-4">
+          {messages.length === 0 && <div className="text-gray-400 text-center py-8 text-lg">Ask me about properties!</div>}
           <ChatMessageList messages={messages} />
           <div ref={messagesEndRef} />
         </div>
-        <div className="mt-4">
+        <div className="mt-2 sm:mt-4 px-2 sm:px-0 pb-2">
           <ChatInput
             input={input}
             loading={loading}
@@ -181,12 +190,13 @@ const Chat: React.FC = () => {
             onSend={sendMessage}
             onShowEmailForm={() => setShowEmailForm(true)}
             hasOffers={pendingOffers.length > 0}
+            inputRef={inputRef}
           />
         </div>
       </section>
       {/* Email Form Section: appears below chat+input, does not affect chat height */}
       {showEmailForm && (
-        <section className="bg-white rounded-lg p-4 mb-2 border border-blue-200 shadow">
+        <section className="bg-white rounded-2xl p-6 mb-2 border border-blue-200 shadow-md max-w-lg mx-auto w-full">
           <EmailForm
             email={emailForm.email}
             agentName={emailForm.agentName}
@@ -201,7 +211,7 @@ const Chat: React.FC = () => {
       )}
       {/* Email Preview Section: appears below form, does not affect chat or form height */}
       {!showEmailForm && awaitingApproval && emailDraft && (
-        <section className="bg-yellow-50 rounded-lg p-4 mb-2 border border-yellow-300 shadow">
+        <section className="bg-yellow-50 rounded-2xl p-6 mb-2 border border-yellow-300 shadow-md max-w-lg mx-auto w-full">
           <EmailPreview
             draft={emailDraft}
             onSend={handleApproveSend}
@@ -213,7 +223,7 @@ const Chat: React.FC = () => {
             {!isEditingDraft && !isLlmEditing && (
               <div className="flex gap-2">
                 <button
-                  className="px-4 py-2 bg-blue-600 text-white rounded font-bold"
+                  className="px-4 py-2 bg-blue-600 text-white rounded font-bold hover:bg-blue-700 transition-colors"
                   onClick={() => {
                     setIsEditingDraft(true);
                     setEditInput(emailDraft);
@@ -222,7 +232,7 @@ const Chat: React.FC = () => {
                   Edit Manually
                 </button>
                 <button
-                  className="px-4 py-2 bg-purple-600 text-white rounded font-bold"
+                  className="px-4 py-2 bg-purple-600 text-white rounded font-bold hover:bg-purple-700 transition-colors"
                   onClick={() => setIsLlmEditing(true)}
                 >
                   Ask AI to Edit
@@ -239,7 +249,7 @@ const Chat: React.FC = () => {
                 />
                 <div className="flex gap-2">
                   <button
-                    className="px-4 py-2 bg-green-600 text-white rounded font-bold"
+                    className="px-4 py-2 bg-green-600 text-white rounded font-bold hover:bg-green-700 transition-colors"
                     onClick={() => {
                       setEmailDraft(editInput);
                       setIsEditingDraft(false);
@@ -248,7 +258,7 @@ const Chat: React.FC = () => {
                     Save
                   </button>
                   <button
-                    className="px-4 py-2 bg-gray-400 text-white rounded font-bold"
+                    className="px-4 py-2 bg-gray-300 text-gray-800 rounded font-bold hover:bg-gray-400 transition-colors"
                     onClick={() => setIsEditingDraft(false)}
                   >
                     Cancel
@@ -261,40 +271,39 @@ const Chat: React.FC = () => {
               <div className="flex flex-col gap-2">
                 <input
                   className="w-full p-2 rounded border border-gray-300"
-                  type="text"
-                  placeholder="Describe how you'd like the email changed (e.g., 'Make it more formal')"
+                  placeholder="Describe how you'd like the draft improved..."
                   value={llmEditInput}
                   onChange={e => setLlmEditInput(e.target.value)}
                   disabled={llmEditLoading}
                 />
                 <div className="flex gap-2">
                   <button
-                    className="px-4 py-2 bg-purple-600 text-white rounded font-bold"
+                    className="px-4 py-2 bg-purple-600 text-white rounded font-bold hover:bg-purple-700 transition-colors"
                     onClick={async () => {
                       setLlmEditLoading(true);
                       try {
-                        const res = await fetch("/api/send-offers/edit", {
-                          method: "POST",
-                          headers: { "Content-Type": "application/json" },
-                          body: JSON.stringify({ draft: emailDraft, instruction: llmEditInput })
+                        const res = await fetch('/api/send-offers/edit', {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({ draft: emailDraft, instruction: llmEditInput }),
                         });
-                        if (!res.ok) throw new Error("Failed to edit draft with AI.");
+                        if (!res.ok) throw new Error('Failed to edit draft.');
                         const data = await res.json();
                         setEmailDraft(data.draftEmail);
                         setIsLlmEditing(false);
                         setLlmEditInput("");
-                      } catch (err) {
-                        setError("Failed to edit draft with AI.");
+                      } catch {
+                        setError('Failed to edit draft.');
                       } finally {
                         setLlmEditLoading(false);
                       }
                     }}
                     disabled={llmEditLoading || !llmEditInput.trim()}
                   >
-                    {llmEditLoading ? "Asking AI..." : "Ask AI"}
+                    {llmEditLoading ? 'Editing...' : 'Apply Edit'}
                   </button>
                   <button
-                    className="px-4 py-2 bg-gray-400 text-white rounded font-bold"
+                    className="px-4 py-2 bg-gray-300 text-gray-800 rounded font-bold hover:bg-gray-400 transition-colors"
                     onClick={() => setIsLlmEditing(false)}
                     disabled={llmEditLoading}
                   >
@@ -306,7 +315,12 @@ const Chat: React.FC = () => {
           </div>
         </section>
       )}
-      {error && <div className="text-red-600 mb-2 text-sm">{error}</div>}
+      {/* Error message */}
+      {error && (
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 font-semibold text-center">
+          {error}
+        </div>
+      )}
     </div>
   );
 };

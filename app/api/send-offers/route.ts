@@ -20,11 +20,18 @@ export async function POST(req: NextRequest) {
     console.log('[SEND-OFFERS] RESEND_API_KEY is set:', !!resendApiKey);
     const resend = new Resend(resendApiKey);
 
+    // Extract only the HTML code block from draftEmail, if present
+    let htmlToSend = draftEmail;
+    const codeBlockMatch = draftEmail.match(/```html([\s\S]*?)```/i);
+    if (codeBlockMatch) {
+      htmlToSend = codeBlockMatch[1].trim();
+    }
+
     const emailPayload = {
       from: 'onboarding@resend.dev',
       to: email,
       subject: `Property Offers from ${agentName}`,
-      html: draftEmail,
+      html: htmlToSend,
     };
     console.log('[SEND-OFFERS] Sending email with payload:', emailPayload);
 
