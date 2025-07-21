@@ -54,13 +54,13 @@ export async function addDocumentToVectorStore(property: Property) {
   await vectorStore.addDocuments([doc]);
 }
 
-export async function listAllOffersFromVectorStore() {
+export async function listAllOffersFromVectorStore(): Promise<Property[]> {
   // Use the Upstash Index directly for range scan
   const index = new Index({
     url: process.env.UPSTASH_VECTOR_REST_URL!,
     token: process.env.UPSTASH_VECTOR_REST_TOKEN!,
   });
-  let offers: any[] = [];
+  let offers: Property[] = [];
   let cursor = "";
   do {
     const res = await index.range({
@@ -69,11 +69,15 @@ export async function listAllOffersFromVectorStore() {
       includeMetadata: true,
       includeData: false,
     });
-    // Return both the Upstash vector's id and the metadata
-    offers = offers.concat(res.vectors.map((v: any) => ({
-      vectorId: v.id, // Upstash vector's UUID
-      ...v.metadata
-    })));
+    // Only include vectors with valid metadata for Property
+    offers = offers.concat(
+      res.vectors
+        .filter((v: { metadata?: Record<string, unknown> }) => v.metadata && typeof v.metadata.id === 'string' && typeof v.metadata.title === 'string')
+        .map((v: { id: string; metadata?: Record<string, unknown> }) => ({
+          ...(v.metadata as Property),
+          vectorId: v.id
+        }))
+    );
     cursor = res.nextCursor;
   } while (cursor);
   return offers;

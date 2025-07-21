@@ -18,7 +18,7 @@ const Chat: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [showEmailForm, setShowEmailForm] = useState(false);
   const [emailForm, setEmailForm] = useState({ email: "", agentName: "", clientName: "", agentNote: "" });
-  const [pendingOffers, setPendingOffers] = useState<any[]>([]); // Offers to send by email
+  const [pendingOffers, setPendingOffers] = useState<unknown[]>([]); // Offers to send by email
   const [emailDraft, setEmailDraft] = useState<string | null>(null);
   const [awaitingApproval, setAwaitingApproval] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
@@ -38,9 +38,9 @@ const Chat: React.FC = () => {
     if (messages.length > 0 && messages[messages.length - 1].role === 'assistant') {
       inputRef.current?.focus();
     }
-  }, [messages]);
+  }, [messages, input, loading]);
 
-  function extractOffersFromLastAssistantMessage(): any[] {
+  function extractOffersFromLastAssistantMessage(): unknown[] {
     const lastAssistant = [...messages].reverse().find(m => m.role === "assistant");
     if (!lastAssistant) return [];
     return pendingOffers;
@@ -69,9 +69,9 @@ const Chat: React.FC = () => {
       if (data.offers) {
         setPendingOffers(data.offers);
       }
-    } catch (err: any) {
-      setError("Failed to get response. Please try again.");
-      console.error('[DEBUG] sendMessage: error', err);
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : String(error) || "Failed to get response. Please try again.");
+      console.error('[DEBUG] sendMessage: error', error);
     } finally {
       setLoading(false);
       console.log('[DEBUG] sendMessage: finished, loading set to false');
@@ -123,7 +123,7 @@ const Chat: React.FC = () => {
       setMessages((prev) => [...prev, { role: "email-preview", content: data.draftEmail }]);
       setAwaitingApproval(true);
       setShowEmailForm(false);
-    } catch (err: any) {
+    } catch {
       setError("Failed to generate email draft.");
     } finally {
       setEmailLoading(false);
@@ -151,15 +151,11 @@ const Chat: React.FC = () => {
       });
       if (!res.ok) throw new Error('Failed to send email.');
       setMessages((prev) => [...prev, { role: "assistant", content: "✅ Email sent!" }]);
-    } catch (err) {
+    } catch {
       setError('Failed to send email.');
     } finally {
       setAwaitingApproval(false);
     }
-  };
-  const handleEditDraft = () => {
-    setShowEmailForm(true);
-    setAwaitingApproval(false);
   };
   const handleCancelEmail = () => {
     setAwaitingApproval(false);

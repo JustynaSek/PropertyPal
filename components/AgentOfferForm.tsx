@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 
 const initialState = {
+  title: "",
   type: "house",
   city: "",
   district: "",
@@ -42,7 +43,7 @@ const AgentOfferForm: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
-    let fieldValue: any = value;
+    let fieldValue: string | boolean = value;
     if (type === "checkbox" && e.target instanceof HTMLInputElement) {
       fieldValue = e.target.checked;
     }
@@ -85,8 +86,8 @@ const AgentOfferForm: React.FC = () => {
       if (!res.ok) throw new Error("Failed to add offer");
       setSuccess("Offer added successfully!");
       setForm(initialState);
-    } catch (err: any) {
-      setError(err.message || "Unknown error");
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : String(error) || "Unknown error");
     } finally {
       setLoading(false);
     }

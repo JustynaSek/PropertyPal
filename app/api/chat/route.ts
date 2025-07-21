@@ -93,7 +93,7 @@ export async function POST(req: NextRequest) {
     const cleanedResponse = assistantResponse.replace(/```json[\s\S]*?```/, '').trim();
 
     // Always include offers array in the response, but only those recommended by the LLM if possible
-    let offers: any[] = [];
+    let offers: Record<string, unknown>[] = [];
     if (recommendedOfferIds.length > 0) {
       offers = retrievedDocs.filter(doc => recommendedOfferIds.includes(doc.metadata.id)).map(doc => ({
         id: doc.metadata.id,
@@ -132,8 +132,9 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ response: cleanedResponse, offers });
 
-  } catch (error) {
+  } catch (error: unknown) {
+    const errMsg = (error instanceof Error) ? error.message : String(error);
     console.error('[ERROR] Chat API:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    return NextResponse.json({ error: errMsg || 'Internal server error' }, { status: 500 });
   }
 }

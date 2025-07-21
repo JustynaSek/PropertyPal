@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 interface OfferCardProps {
   offer: {
@@ -27,7 +28,7 @@ interface OfferCardProps {
 const OfferCard: React.FC<OfferCardProps> = ({ offer }) => {
   return (
     <div style={{ background: "#fff", borderRadius: 12, boxShadow: "0 2px 12px #0001", padding: 18, margin: 8, maxWidth: 340 }}>
-      <img src={offer.image_url} alt={offer.type} style={{ width: "100%", borderRadius: 8, marginBottom: 10 }} />
+      <Image src={offer.image_url} alt={offer.type} width={340} height={200} style={{ width: "100%", borderRadius: 8, marginBottom: 10 }} />
       <div style={{ fontWeight: 800, fontSize: 22, marginBottom: 6 }}>{offer.title}</div>
       <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 4 }}>{offer.type.charAt(0).toUpperCase() + offer.type.slice(1)}</div>
       <div style={{ color: "#2563eb", fontWeight: 600, marginBottom: 4 }}>{offer.location.city}, {offer.location.district}, {offer.location.neighborhood}</div>

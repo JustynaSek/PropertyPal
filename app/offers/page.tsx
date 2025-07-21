@@ -23,7 +23,6 @@ const OffersPage: React.FC = () => {
   const [offers, setOffers] = useState<Offer[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedOffer, setSelectedOffer] = useState<Offer | null>(null);
   const [showEditModal, setShowEditModal] = useState(false);
   const [editForm, setEditForm] = useState<Offer | null>(null);
   const [editLoading, setEditLoading] = useState(false);
@@ -36,8 +35,8 @@ const OffersPage: React.FC = () => {
         if (!res.ok) throw new Error("Failed to fetch offers");
         const data = await res.json();
         setOffers(data.offers || []);
-      } catch (err: any) {
-        setError(err.message || "Unknown error");
+      } catch (error: unknown) {
+        setError(error instanceof Error ? error.message : String(error) || "Unknown error");
       } finally {
         setLoading(false);
       }
@@ -46,7 +45,6 @@ const OffersPage: React.FC = () => {
   }, []);
 
   const handleEdit = (offer: Offer) => {
-    setSelectedOffer(offer);
     setEditForm({ ...offer });
     setShowEditModal(true);
   };
@@ -54,7 +52,7 @@ const OffersPage: React.FC = () => {
   const handleEditFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (!editForm) return;
     const { name, value, type } = e.target;
-    let fieldValue: any = value;
+    let fieldValue: string | boolean = value;
     if (type === "checkbox" && e.target instanceof HTMLInputElement) {
       fieldValue = e.target.checked;
     }
@@ -92,10 +90,9 @@ const OffersPage: React.FC = () => {
       const updated = await res.json();
       setOffers((prev) => prev.map((o) => o.vectorId === editForm.vectorId ? updated.offer : o));
       setShowEditModal(false);
-      setSelectedOffer(null);
       setEditForm(null);
-    } catch (err: any) {
-      setError(err.message || "Unknown error");
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : String(error) || "Unknown error");
     } finally {
       setEditLoading(false);
     }
@@ -107,8 +104,8 @@ const OffersPage: React.FC = () => {
       const res = await fetch(`/api/offers/${offer.vectorId}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Failed to delete offer");
       setOffers((prev) => prev.filter((o) => o.vectorId !== offer.vectorId));
-    } catch (err: any) {
-      setError(err.message || "Unknown error");
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : String(error) || "Unknown error");
     }
   };
 
@@ -199,7 +196,7 @@ const OffersPage: React.FC = () => {
               <input type="text" name="listing_url" value={editForm.listing_url || ""} onChange={handleEditFormChange} className="w-full border p-2 rounded" placeholder="Listing URL" />
               <div className="flex gap-2 mt-4">
                 <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded font-bold" disabled={editLoading}>{editLoading ? "Saving..." : "Save"}</button>
-                <button type="button" className="px-4 py-2 bg-gray-400 text-white rounded font-bold" onClick={() => { setShowEditModal(false); setSelectedOffer(null); setEditForm(null); }}>Cancel</button>
+                <button type="button" className="px-4 py-2 bg-gray-400 text-white rounded font-bold" onClick={() => { setShowEditModal(false); setEditForm(null); }}>Cancel</button>
               </div>
             </form>
           </div>

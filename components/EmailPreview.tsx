@@ -12,7 +12,7 @@ function parseDraftWithComments(draft: string): ParsedDraft {
   const codeBlockRegex = /```html([\s\S]*?)```/i;
   const match = draft.match(codeBlockRegex);
   let html = "";
-  let comments: string[] = [];
+  const comments: string[] = [];
   if (match) {
     html = match[1].trim();
     // Everything before and after the code block is a comment

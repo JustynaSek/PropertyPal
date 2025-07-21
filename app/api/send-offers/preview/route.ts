@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
       draftEmail = codeBlockMatch[1].trim();
     }
     return NextResponse.json({ draftEmail });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to generate email draft.' }, { status: 500 });
   }
 } 

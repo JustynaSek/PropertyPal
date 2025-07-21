@@ -1,6 +1,5 @@
 import { NextRequest } from "next/server";
-import { addDocumentToVectorStore, Property, listAllOffersFromVectorStore } from "@/lib/vectorStore";
-import { Index } from "@upstash/vector";
+import { addDocumentToVectorStore, listAllOffersFromVectorStore, Property } from "@/lib/vectorStore";
 // import offersData from "@/lib/data/offers.json";
 
 function generateId() {
@@ -11,16 +10,17 @@ export async function GET() {
   try {
     const offers = await listAllOffersFromVectorStore();
     return new Response(JSON.stringify({ offers }), { status: 200 });
-  } catch (err: any) {
-    return new Response(JSON.stringify({ error: err.message || "Unknown error" }), { status: 500 });
+  } catch (error: unknown) {
+    const errMsg = (error instanceof Error) ? error.message : String(error);
+    return new Response(JSON.stringify({ error: errMsg || "Unknown error" }), { status: 500 });
   }
 }
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const newOffers = Array.isArray(body) ? body : [body];
-    const offersWithId = newOffers.map((offer: any) => ({
+    const newOffers: Property[] = Array.isArray(body) ? body : [body];
+    const offersWithId: Property[] = newOffers.map((offer) => ({
       ...offer,
       id: offer.id || generateId(),
     }));
@@ -29,8 +29,9 @@ export async function POST(req: NextRequest) {
       await addDocumentToVectorStore(offer);
     }
     return new Response(JSON.stringify({ success: true, offers: offersWithId }), { status: 200 });
-  } catch (err: any) {
-    console.error("[ERROR] /api/offers POST:", err);
-    return new Response(JSON.stringify({ error: err.message || "Unknown error" }), { status: 500 });
+  } catch (error: unknown) {
+    const errMsg = (error instanceof Error) ? error.message : String(error);
+    console.error("[ERROR] /api/offers POST:", error);
+    return new Response(JSON.stringify({ error: errMsg || "Unknown error" }), { status: 500 });
   }
 } 
