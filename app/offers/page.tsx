@@ -26,6 +26,11 @@ const OffersPage: React.FC = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [editForm, setEditForm] = useState<Offer | null>(null);
   const [editLoading, setEditLoading] = useState(false);
+  const [filters, setFilters] = useState({
+    searchTerm: "",
+    type: "all",
+    city: ""
+  });
 
   useEffect(() => {
     const fetchOffers = async () => {
@@ -43,6 +48,28 @@ const OffersPage: React.FC = () => {
     };
     fetchOffers();
   }, []);
+
+  const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFilters(prev => ({ ...prev, [name]: value }));
+  };
+
+  const filteredOffers = React.useMemo(() => {
+    return offers.filter(offer => {
+      const { searchTerm, type, city } = filters;
+      const searchTermLower = searchTerm.toLowerCase();
+      
+      const matchesSearchTerm = !searchTerm || 
+        offer.title.toLowerCase().includes(searchTermLower) || 
+        offer.description.toLowerCase().includes(searchTermLower);
+      
+      const matchesType = type === "all" || offer.type.toLowerCase() === type.toLowerCase();
+      
+      const matchesCity = !city || offer.location.city.toLowerCase().includes(city.toLowerCase());
+
+      return matchesSearchTerm && matchesType && matchesCity;
+    });
+  }, [offers, filters]);
 
   const handleEdit = (offer: Offer) => {
     setEditForm({ ...offer });
@@ -111,7 +138,54 @@ const OffersPage: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto p-8">
-      <h1 className="text-3xl font-bold mb-6">Offers List</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold">Offers List</h1>
+        <a href="/add-offer" className="px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
+          + Add Offer
+        </a>
+      </div>
+      
+      <div className="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label htmlFor="searchTerm" className="block text-sm font-medium text-gray-700 mb-1">Search</label>
+          <input
+            type="text"
+            id="searchTerm"
+            name="searchTerm"
+            value={filters.searchTerm}
+            onChange={handleFilterChange}
+            placeholder="Search by title or description..."
+            className="w-full border p-2 rounded-md"
+          />
+        </div>
+        <div>
+          <label htmlFor="type" className="block text-sm font-medium text-gray-700 mb-1">Type</label>
+          <select
+            id="type"
+            name="type"
+            value={filters.type}
+            onChange={handleFilterChange}
+            className="w-full border p-2 rounded-md"
+          >
+            <option value="all">All</option>
+            <option value="house">House</option>
+            <option value="apartment">Apartment</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-1">City</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            value={filters.city}
+            onChange={handleFilterChange}
+            placeholder="Filter by city..."
+            className="w-full border p-2 rounded-md"
+          />
+        </div>
+      </div>
+
       {loading ? (
         <div>Loading...</div>
       ) : error ? (
@@ -128,7 +202,7 @@ const OffersPage: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {offers.map((offer) => (
+            {filteredOffers.map((offer) => (
               <tr key={offer.vectorId} className="border-t">
                 <td className="p-2 font-semibold">{offer.title}</td>
                 <td className="p-2">{offer.type}</td>
